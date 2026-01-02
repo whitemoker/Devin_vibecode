@@ -1,0 +1,289 @@
+================================================================================
+Kimi moonshot-v1-128k 错误案例 (9个)
+================================================================================
+
+--- 错误案例 1 ---
+期望: IN_TRANSIT_01
+预测: IN_TRANSIT_02
+置信度: 1.0
+
+【轨迹】
+单号：ZC53472203799
+物流商：China Post
+2025-12-16 22:26:25 邮件离开【东莞市国际公司直属国际营业部】，正在发往【广商中心】 广东省,东莞市
+2025-12-16 22:15:30 邮件已在【东莞市国际公司直属国际营业部】完成分拣，准备发出 广东省,东莞市
+2025-12-16 19:08:59 快件离开处理中心【东莞市】 东莞市
+2025-12-16 19:06:38 快件到达处理中心【东莞市】 东莞市
+2025-12-16 18:28:57 中国邮政已收取快件 广东省,东莞市
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+整体是一个运输中的状态，不太好归类到其他运输节点中，就放到当前的运输中了
+
+【模型解释】
+根据提供的物流轨迹信息，包裹已经在中国邮政的东莞市国际公司直属国际营业部完成分拣，并已离开该营业部发往广商中心。同时，包裹也已离开和到达东莞市的处理中心。这表明包裹正在运输途中，并且已经到达了分拣中心，因此状态被分类为IN_TRANSIT_02。
+================================================================================
+
+--- 错误案例 2 ---
+期望: IN_TRANSIT_02
+预测: IN_TRANSIT_06
+置信度: 1.0
+
+【轨迹】
+单号：92419903032582543402551286
+物流商：UPS
+国家：未知->未知
+2025-12-16 14:07:00 Arrived at USPS Facility US
+2025-12-16 13:13:00 Shipment Received, Package Acceptance Pending Raleigh, NC, US
+2025-12-16 12:58:00 Departed UPS Facility Butner, NC, US
+2025-12-16 12:52:00 Accepted at USPS Destination Sort Facility US
+2025-12-16 08:02:00 Arrived at UPS Facility Butner, NC, US
+2025-12-13 02:00:00 Departed UPS Facility San Leandro, CA, US
+2025-12-12 23:04:00 Package processed San Leandro, CA, US
+2025-12-12 16:00:00 Order information received US
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+Arrived at USPS Facility US. 表明包裹已经到达了USPS的站点
+
+【模型解释】
+根据轨迹信息，包裹已经从UPS Facility出发，经过多个UPS Facility的处理，并最终被USPS接收。特别是'2025-12-16 14:07:00 Arrived at USPS Facility US'表明包裹已经到达了USPS的设施，这意味着包裹已经抵达目的国，并且正在USPS的网络中进行处理。因此，包裹的状态是'IN_TRANSIT_06'。
+================================================================================
+
+--- 错误案例 3 ---
+期望: IN_TRANSIT_04
+预测: IN_TRANSIT_03
+置信度: 1.0
+
+【轨迹】
+单号：LZ339063340CN
+物流商：China Post
+国家：China->未知
+2025-12-09 08:22:40 【郑州市国际互换局】已出口直封 河南省,郑州市
+2025-12-09 08:22:10 出口海关/放行 河南省,郑州市
+2025-12-09 07:53:00 送交出口海关 河南省,郑州市
+2025-12-09 07:10:27 邮件到达【郑州市国际互换局】 河南省,郑州市
+2025-12-08 15:24:29 邮件离开【河南省国际公司直属国际特快营业部】，正在发往【郑州市】 河南省,郑州市
+2025-12-08 15:20:44 邮件已在【河南省国际公司直属国际特快营业部】完成分拣，准备发出 河南省,郑州市
+2025-12-08 15:00:12 中国邮政已收取快件 河南省,郑州市
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+【郑州市国际互换局】已出口直封，出现了已出口直封的字样
+
+【模型解释】
+根据轨迹信息，包裹已经完成海关清关，状态为IN_TRANSIT_03。
+================================================================================
+
+--- 错误案例 4 ---
+期望: IN_TRANSIT_08
+预测: IN_TRANSIT_05
+置信度: 1.0
+
+【轨迹】
+单号：LZ339063340CN
+物流商：China Post
+国家：China->未知
+2025-12-11 08:25:00 航空公司启运 
+2025-12-11 08:24:00 航空公司启运 
+2025-12-10 15:36:00 航空公司接收 
+2025-12-09 13:44:52 航空公司接收 
+2025-12-09 13:44:39 已交承运商运输 河南省,郑州市
+2025-12-09 12:56:29 邮件离开【郑州市国际互换局】，正在发往下一站 河南省,郑州市
+2025-12-09 08:22:40 【郑州市国际互换局】已出口直封 河南省,郑州市
+2025-12-09 08:22:10 出口海关/放行 河南省,郑州市
+2025-12-09 07:53:00 送交出口海关 河南省,郑州市
+2025-12-09 07:10:27 邮件到达【郑州市国际互换局】 河南省,郑州市
+2025-12-08 15:24:29 邮件离开【河南省国际公司直属国际特快营业部】，正在发往【郑州市】 河南省,郑州市
+2025-12-08 15:20:44 邮件已在【河南省国际公司直属国际特快营业部】完成分拣，准备发出 河南省,郑州市
+2025-12-08 15:00:12 中国邮政已收取快件 河南省,郑州市
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+航空公司启运 代表已经由航空公司在运输了
+
+【模型解释】
+根据轨迹信息，包裹已经多次被航空公司接收并启运，表明包裹已经交由航空公司运输，正在飞往目的国的途中。
+================================================================================
+
+--- 错误案例 5 ---
+期望: WAITING_DELIVERY_01
+预测: IN_TRANSIT_07
+置信度: 1.0
+
+【轨迹】
+单号：00K96P0N
+物流商：GLS
+2025-12-15 06:34:40 The parcel is expected to be delivered during the day. France Rixheim
+2025-12-15 06:08:50 The parcel has reached the parcel center. France Rixheim
+2025-12-12 17:12:19 The parcel has reached the parcel center. France Le Coudray-Montceaux
+2025-12-12 17:12:19 The parcel was handed over to GLS. France Le Coudray-Montceaux
+2025-12-11 14:55:22 The parcel data was entered into the GLS IT system; the parcel was not yet handed over to GLS. France Fleury Mérogis
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+轨迹信息中虽然没有直接包含“Out for delivery”的关键词，但是有提到“The parcel is expected to be delivered during the day.”，表面包裹正常会在今天签收，这里已经是签收前的最后一个节点了，大概率包裹已经在派送途中了。
+
+【模型解释】
+根据轨迹信息，包裹已经到达当地网点（Rixheim），并且预计在当天派送，这符合'包裹已到达当地网点，即将派送'的状态。
+================================================================================
+
+--- 错误案例 6 ---
+期望: WAITING_DELIVERY_03
+预测: DELIVERY_FAILED_04
+置信度: 1.0
+
+【轨迹】
+单号：4PX3002300585543CN
+物流商：4PX
+国家：China->USA
+2025-12-12 08:35:00 Notice Left (No Secure Location Available) -> We attempted to deliver your item at 8:35 am on December 12, 2025 in GREENCASTLE, PA 17225 and a notice was left because no secure delivery location was available. GREENCASTLE, PA 17225
+2025-12-12 08:35:00 No Secure Location Available GREENCASTLE,PA 17225
+2025-12-12 06:48:00 Out for Delivery GREENCASTLE, PA 17225
+2025-12-12 06:48:00 Out for Delivery GREENCASTLE,PA 17225
+2025-12-12 06:37:00 Arrived at Post Office GREENCASTLE, PA 17225
+2025-12-12 06:37:00 Arrived at Post Office GREENCASTLE,PA 17225
+2025-12-11 09:03:00 Arrived at USPS Regional Destination Facility HARRISBURG PA DISTRIBUTION CENTER
+2025-12-11 09:03:00 Processed through USPS Facility HARRISBURG PA DISTRIBUTION CENTER
+2025-12-11 07:48:00 Accepted at USPS Regional Destination Facility HARRISBURG PA DISTRIBUTION CENTER
+2025-12-11 07:48:00 Acceptance at Destination HARRISBURG PA DISTRIBUTION CENTER
+2025-12-10 23:09:00 Arrived Shipping Partner Facility, USPS Awaiting Item MANASSAS, VA 20109
+2025-12-10 23:09:00 Arrived Shipping Partner Facility, USPS Awaiting Item MANASSAS,VA 20109
+2025-12-10 18:44:00 Departed Shipping Partner Facility, USPS Awaiting Item MANASSAS, VA 20109
+2025-12-10 18:44:00 Departed Shipping Partner Facility, USPS Awaiting Item MANASSAS,VA 20109
+2025-12-10 12:23:00 Departed Shipping Partner Facility, USPS Awaiting Item AVENEL, NJ 07001
+2025-12-10 12:23:00 Departed Shipping Partner Facility, USPS Awaiting Item AVENEL,NJ 07001
+2025-12-09 21:51:00 Arrived Shipping Partner Facility, USPS Awaiting Item AVENEL, NJ 07001
+2025-12-09 21:51:00 Arrived Shipping Partner Facility, USPS Awaiting Item AVENEL,NJ 07001
+2025-12-09 21:34:00 Handed over to last mile 
+2025-12-09 16:34:00 Arrived at warehouse 
+2025-12-08 10:12:00 Arrival to the destination airport 
+2025-12-08 10:12:00 Arrival to the destination airport 
+2025-12-07 16:28:43 Departure from the original airport 
+2025-12-07 05:19:00 Shipping Label Created, USPS Awaiting Item AVENEL,NJ 07001
+2025-12-05 15:00:00 Hand over to airline. 
+2025-12-05 10:07:06 Depart from facility to service provider. Xiamen,China
+2025-12-04 17:45:52 Shipment arrived at facility and measured. Xiamen,China
+2025-12-04 17:45:51 Shipment picked up. Xiamen,China
+2025-12-03 10:57:19 Parcel information received 
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+出现了notice left的信息，这个是首次尝试派送，发现没有安全放置的地方，而决定后续再派送
+
+【模型解释】
+根据轨迹信息，包裹在尝试派送时因为无法找到一个安全的投递地点而留下通知，表明派送失败，属于其他原因导致的派送失败。
+================================================================================
+
+--- 错误案例 7 ---
+期望: DELIVERED_02
+预测: DELIVERED_01
+置信度: 1.0
+
+【轨迹】
+单号：SP0853393164586577
+物流商：Super Parcel Track
+2025-12-01 16:08:00 The item is collected at the pick-up point 
+2025-12-01 12:31:00 The item is available at the pickup point 
+2025-12-01 11:10:00 Driver is en route to the pickup location 
+2025-12-01 10:25:00 The item is at the local delivery office 
+2025-12-01 09:48:00 The item is at the local delivery office 
+2025-12-01 09:09:00 The item is at the local delivery office 
+2025-12-01 07:16:00 The item is at the local delivery office 
+2025-12-01 00:35:00 The item is at the local delivery office 
+2025-12-01 00:35:00 The item is at the local sorting centre 
+2025-11-30 23:40:00 The item is at the local sorting centre 
+2025-11-30 20:52:26 Delivered to local carrier 
+2025-11-30 20:47:17 Departed from facility 
+2025-11-29 22:46:03 Clearance processing completed - Import 
+2025-11-29 22:37:26 Arrived at sort facility 
+2025-11-29 21:36:58 In clearance processing - Import 
+2025-11-29 15:46:42 NOA received 
+2025-11-28 14:45:00 International flight has arrived 
+2025-11-28 10:29:00 International flight has departed 
+2025-11-25 22:04:51 Arrived at the origin international airport 
+2025-11-25 12:04:54 Shipment is in transit to next facility 
+2025-11-25 02:43:40 Departed from sort facility 
+2025-11-25 01:25:05 Arrived at origin facility 
+2025-11-17 17:38:57 Shipment information received 
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+The item is collected at the pick-up point 表明包裹已在自提点被领取，包裹已经签收成功
+
+【模型解释】
+根据轨迹信息，包裹在2025-12-01 16:08:00显示为'The item is collected at the pick-up point'，表明包裹已经被取件点收集，这通常意味着包裹已经被成功送达，因此状态被分类为'DELIVERED_01'。
+================================================================================
+
+--- 错误案例 8 ---
+期望: DELIVERY_FAILED_02
+预测: WAITING_DELIVERY_03
+置信度: 1.0
+
+【轨迹】
+单号：15504652683779
+物流商：DPD(UK)
+国家：UK->未知
+2025-12-16 07:40:00 We missed you. Your driver Stephen won't be back today but you can still rearrange your delivery. DPD
+2025-12-16 07:13:00 Your parcel will be with you today DPD
+2025-12-15 23:19:00 Your parcel is at our depot ready for delivery DPD
+2025-12-15 23:18:00 Your parcel is at our depot ready for delivery DPD
+2025-12-15 15:57:00 As requested, your parcel will now be delivered on Tue 16 December 2025 DPD
+2025-12-15 15:48:00 Your parcel could not be delivered as the receiver could not provide a valid PIN code DPD
+2025-12-15 09:39:00 Your parcel will be with you today DPD
+2025-12-15 05:44:00 Your parcel is at our depot ready for delivery DPD
+2025-12-15 05:42:00 Your parcel is at our depot ready for delivery DPD
+2025-12-15 00:09:00 We have your parcel and it's on its way to our depot DPD
+2025-12-14 13:13:00 We have your parcel and it's on its way to you DPD
+2025-12-14 10:45:00 We've received your order details, but have not yet received your parcel The Diamond Store
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+We missed you. 表明错过了，所以投递失败
+
+【模型解释】
+根据轨迹信息，包裹在2025-12-16显示'Your driver Stephen won't be back today but you can still rearrange your delivery'，表明派送失败，需要重新安排派送。同时在2025-12-15有记录'Your parcel could not be delivered as the receiver could not provide a valid PIN code'，说明由于收件人未能提供有效的PIN码导致派送失败。因此，包裹目前状态为等待重新派送。
+================================================================================
+
+--- 错误案例 9 ---
+期望: DELIVERY_FAILED_04
+预测: DELIVERY_FAILED_02
+置信度: 0.9
+
+【轨迹】
+单号：4PX3002321628892CN
+物流商：4PX
+国家：China->Poland
+2025-12-16 10:13:52 Delivery attempt unsuccessful UP Łańcut
+2025-12-16 09:13:06 Out for delivery UP Łańcut
+2025-12-16 08:26:22 Arrived at delivery office UP Łańcut
+2025-12-15 09:21:02 Received by delivery company PL
+2025-12-12 22:57:20 Parcel outbound from transit center 
+2025-12-12 10:00:26 Import customs clearance complete 
+2025-12-12 03:37:57 Arrive in transit center PL
+2025-12-11 18:53:00 Arrival to the destination airport 
+2025-12-11 18:53:00 Arrival to the destination airport 
+2025-12-11 13:20:00 Departure from the original airport 
+2025-12-11 08:24:02 Hand over to airline. 
+2025-12-08 05:47:05 Depart from facility to service provider. Nancheng
+2025-12-08 04:09:23 Shipment arrived at facility and measured. Nancheng
+2025-12-08 04:01:29 Shipment arrived at facility and measured. Nancheng
+2025-12-08 04:01:28 Shipment picked up. Nancheng
+2025-12-07 18:03:05 Parcel information received 
+==========================================
+Powered by www.track123.com
+
+【标注原因】
+Delivery attempt unsuccessful. 是典型的投递失败，且没有说明原因
+
+【模型解释】
+根据轨迹信息，包裹在2025-12-16 10:13:52有一次派送尝试，但未成功，这表明可能是由于收件人不在家导致派送失败。
+================================================================================
