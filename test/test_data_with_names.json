@@ -46,14 +46,14 @@
     "language": "en",
     "trace": "Tracking: UK754362568YP\nCarrier: Yanwen\n2025-12-17 16:20:00 Delivery attempted, left notice for: Sarah Williams\n2025-12-17 10:00:00 Out for delivery\n2025-12-17 07:34:00 Processing information input",
     "expected_names": ["Sarah Williams"],
-    "sub_status": "FAILED_ATTEMPT_01"
+    "sub_status": "DELIVERY_FAILED_02"
   },
   {
     "id": 8,
     "language": "zh",
     "trace": "单号：YT2534601002506026\n物流商：YunExpress\n2025-12-17 17:00:00 投递失败，收件人王芳不在家\n2025-12-17 14:00:00 派送中\n2025-12-15 15:43:00 清关完成",
     "expected_names": ["王芳"],
-    "sub_status": "FAILED_ATTEMPT_01"
+    "sub_status": "DELIVERY_FAILED_02"
   },
   {
     "id": 9,
@@ -74,7 +74,7 @@
     "language": "en",
     "trace": "Tracking: 92419903032582543402551286\nCarrier: UPS\n2025-12-17 18:00:00 Package held at facility, contact: Emily Davis\n2025-12-16 14:07:00 Arrived at USPS Facility US\n2025-12-16 08:02:00 Arrived at UPS Facility Butner, NC",
     "expected_names": ["Emily Davis"],
-    "sub_status": "EXCEPTION_03"
+    "sub_status": "ABNORMAL_03"
   },
   {
     "id": 12,
