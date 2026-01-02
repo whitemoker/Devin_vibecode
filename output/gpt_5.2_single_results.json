@@ -1,105 +1,97 @@
 {
-  "model": "Kimi",
-  "pipeline": "hierarchical",
+  "model": "GPT-5.2",
+  "pipeline": "single-stage",
   "stats": {
     "total": 56,
-    "correct": 24,
-    "accuracy": 0.42857142857142855,
-    "main_correct": 0,
-    "main_accuracy": 0.0,
-    "uncertain": 16,
-    "uncertain_rate": 0.2857142857142857
+    "correct": 42,
+    "accuracy": 0.75,
+    "main_correct": 49,
+    "main_accuracy": 0.875
   },
   "results": [
     {
       "expected": "IN_TRANSIT_01",
       "predicted": "IN_TRANSIT_01",
       "correct": true,
-      "confidence": 0.8
+      "confidence": 0.86
     },
     {
       "expected": "IN_TRANSIT_01",
       "predicted": "IN_TRANSIT_02",
       "correct": false,
-      "confidence": 0.9
+      "confidence": 0.86
     },
     {
       "expected": "IN_TRANSIT_02",
       "predicted": "IN_TRANSIT_02",
       "correct": true,
-      "confidence": 0.9
+      "confidence": 0.86
     },
     {
       "expected": "IN_TRANSIT_02",
       "predicted": "IN_TRANSIT_02",
       "correct": true,
-      "confidence": 0.9
-    },
-    {
-      "expected": "IN_TRANSIT_03",
-      "predicted": "IN_TRANSIT_06",
-      "correct": false,
-      "confidence": 0.9
+      "confidence": 0.78
     },
     {
       "expected": "IN_TRANSIT_03",
       "predicted": "IN_TRANSIT_03",
       "correct": true,
-      "confidence": 0.9
+      "confidence": 0.83
     },
     {
-      "expected": "IN_TRANSIT_04",
-      "predicted": "IN_TRANSIT_02",
-      "correct": false,
-      "confidence": 0.9
+      "expected": "IN_TRANSIT_03",
+      "predicted": "IN_TRANSIT_03",
+      "correct": true,
+      "confidence": 0.92
     },
     {
       "expected": "IN_TRANSIT_04",
       "predicted": "IN_TRANSIT_03",
       "correct": false,
-      "confidence": 0.8
+      "confidence": 0.82
+    },
+    {
+      "expected": "IN_TRANSIT_04",
+      "predicted": "IN_TRANSIT_04",
+      "correct": true,
+      "confidence": 0.76
     },
     {
       "expected": "IN_TRANSIT_05",
       "predicted": "IN_TRANSIT_05",
       "correct": true,
-      "confidence": 0.9
+      "confidence": 0.86
     },
     {
       "expected": "IN_TRANSIT_05",
-      "predicted": "IN_TRANSIT_01",
-      "correct": false,
-      "confidence": 1.0
+      "predicted": "IN_TRANSIT_05",
+      "correct": true,
+      "confidence": 0.86
     },
     {
       "expected": "IN_TRANSIT_06",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "IN_TRANSIT_06",
+      "correct": true,
+      "confidence": 0.86
     },
     {
       "expected": "IN_TRANSIT_06",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "IN_TRANSIT_06",
+      "correct": true,
+      "confidence": 0.86
     },
     {
       "expected": "IN_TRANSIT_07",
-      "predicted": "UNKNOWN",
+      "predicted": "IN_TRANSIT_02",
       "correct": false,
-      "confidence": 0.0
+      "confidence": 0.84
     },
     {
       "expected": "IN_TRANSIT_07",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
-    },
-    {
-      "expected": "IN_TRANSIT_08",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "IN_TRANSIT_07",
+      "correct": true,
+      "confidence": 0.74
     },
     {
       "expected": "IN_TRANSIT_08",
@@ -108,88 +100,94 @@
       "confidence": 0.9
     },
     {
-      "expected": "WAITING_DELIVERY_01",
-      "predicted": "WAITING_DELIVERY_01",
+      "expected": "IN_TRANSIT_08",
+      "predicted": "IN_TRANSIT_08",
       "correct": true,
-      "confidence": 0.9
+      "confidence": 0.87
+    },
+    {
+      "expected": "WAITING_DELIVERY_01",
+      "predicted": "IN_TRANSIT_07",
+      "correct": false,
+      "confidence": 0.74
     },
     {
       "expected": "WAITING_DELIVERY_01",
       "predicted": "WAITING_DELIVERY_01",
       "correct": true,
-      "confidence": 0.9
+      "confidence": 0.86
     },
     {
       "expected": "WAITING_DELIVERY_02",
       "predicted": "WAITING_DELIVERY_02",
       "correct": true,
-      "confidence": 1.0
+      "confidence": 0.94
     },
     {
       "expected": "WAITING_DELIVERY_02",
       "predicted": "WAITING_DELIVERY_02",
       "correct": true,
-      "confidence": 1.0
+      "confidence": 0.93
     },
     {
       "expected": "WAITING_DELIVERY_03",
       "predicted": "WAITING_DELIVERY_03",
       "correct": true,
-      "confidence": 0.9
+      "confidence": 0.78
     },
     {
       "expected": "WAITING_DELIVERY_03",
-      "predicted": "WAITING_DELIVERY_03",
-      "correct": true,
+      "predicted": "DELIVERY_FAILED_04",
+      "correct": false,
       "confidence": 0.9
     },
     {
       "expected": "DELIVERED_01",
       "predicted": "DELIVERED_04",
       "correct": false,
-      "confidence": 1.0
+      "confidence": 0.96
     },
     {
       "expected": "DELIVERED_01",
       "predicted": "DELIVERED_01",
       "correct": true,
-      "confidence": 1.0
+      "confidence": 0.98
     },
     {
       "expected": "DELIVERED_02",
       "predicted": "DELIVERED_02",
       "correct": true,
-      "confidence": 1.0
+      "confidence": 0.99
     },
     {
       "expected": "DELIVERED_02",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "DELIVERED_02",
+      "correct": true,
+      "confidence": 0.96
     },
     {
       "expected": "DELIVERED_03",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "DELIVERED_03",
+      "correct": true,
+      "confidence": 0.94
     },
     {
       "expected": "DELIVERED_03",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "DELIVERED_03",
+      "correct": true,
+      "confidence": 0.98
     },
     {
       "expected": "DELIVERED_04",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "DELIVERED_04",
+      "correct": true,
+      "confidence": 0.97
     },
     {
       "expected": "DELIVERED_04",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
+      "predicted": "DELIVERED_04",
+      "correct": true,
+      "confidence": 0.98
     },
     {
       "expected": "DELIVERY_FAILED_01",
@@ -201,151 +199,151 @@
       "expected": "DELIVERY_FAILED_01",
       "predicted": "DELIVERY_FAILED_01",
       "correct": true,
-      "confidence": 1.0
+      "confidence": 0.93
     },
     {
       "expected": "DELIVERY_FAILED_02",
       "predicted": "DELIVERY_FAILED_02",
       "correct": true,
-      "confidence": 1.0
+      "confidence": 0.92
     },
     {
       "expected": "DELIVERY_FAILED_02",
-      "predicted": "DELIVERY_FAILED_03",
+      "predicted": "DELIVERY_FAILED_04",
       "correct": false,
-      "confidence": 0.9
+      "confidence": 0.84
+    },
+    {
+      "expected": "DELIVERY_FAILED_03",
+      "predicted": "DELIVERY_FAILED_01",
+      "correct": false,
+      "confidence": 0.84
     },
     {
       "expected": "DELIVERY_FAILED_03",
       "predicted": "DELIVERY_FAILED_03",
       "correct": true,
-      "confidence": 0.8
-    },
-    {
-      "expected": "DELIVERY_FAILED_03",
-      "predicted": "DELIVERY_FAILED_03",
-      "correct": true,
-      "confidence": 1.0
+      "confidence": 0.93
     },
     {
       "expected": "DELIVERY_FAILED_04",
       "predicted": "DELIVERY_FAILED_04",
       "correct": true,
-      "confidence": 0.8
+      "confidence": 0.86
     },
     {
       "expected": "DELIVERY_FAILED_04",
       "predicted": "DELIVERY_FAILED_04",
       "correct": true,
-      "confidence": 0.8
+      "confidence": 0.78
     },
     {
       "expected": "ABNORMAL_01",
+      "predicted": "ABNORMAL_01",
+      "correct": true,
+      "confidence": 0.92
+    },
+    {
+      "expected": "ABNORMAL_01",
+      "predicted": "ABNORMAL_01",
+      "correct": true,
+      "confidence": 0.87
+    },
+    {
+      "expected": "ABNORMAL_02",
+      "predicted": "ABNORMAL_02",
+      "correct": true,
+      "confidence": 0.93
+    },
+    {
+      "expected": "ABNORMAL_02",
+      "predicted": "ABNORMAL_02",
+      "correct": true,
+      "confidence": 0.93
+    },
+    {
+      "expected": "ABNORMAL_03",
+      "predicted": "DELIVERED_01",
+      "correct": false,
+      "confidence": 0.84
+    },
+    {
+      "expected": "ABNORMAL_03",
+      "predicted": "ABNORMAL_03",
+      "correct": true,
+      "confidence": 0.95
+    },
+    {
+      "expected": "ABNORMAL_04",
+      "predicted": "ABNORMAL_04",
+      "correct": true,
+      "confidence": 0.98
+    },
+    {
+      "expected": "ABNORMAL_04",
+      "predicted": "ABNORMAL_04",
+      "correct": true,
+      "confidence": 0.92
+    },
+    {
+      "expected": "ABNORMAL_05",
+      "predicted": "ABNORMAL_05",
+      "correct": true,
+      "confidence": 0.93
+    },
+    {
+      "expected": "ABNORMAL_05",
+      "predicted": "ABNORMAL_05",
+      "correct": true,
+      "confidence": 0.95
+    },
+    {
+      "expected": "ABNORMAL_06",
+      "predicted": "DELIVERED_01",
+      "correct": false,
+      "confidence": 0.92
+    },
+    {
+      "expected": "ABNORMAL_06",
+      "predicted": "ABNORMAL_06",
+      "correct": true,
+      "confidence": 0.92
+    },
+    {
+      "expected": "ABNORMAL_07",
+      "predicted": "ABNORMAL_07",
+      "correct": true,
+      "confidence": 0.9
+    },
+    {
+      "expected": "ABNORMAL_07",
+      "predicted": "DELIVERY_FAILED_01",
+      "correct": false,
+      "confidence": 0.92
+    },
+    {
+      "expected": "ABNORMAL_08",
       "predicted": "WAITING_DELIVERY_03",
       "correct": false,
-      "confidence": 0.8
-    },
-    {
-      "expected": "ABNORMAL_01",
-      "predicted": "DELIVERY_FAILED_02",
-      "correct": false,
-      "confidence": 0.8
-    },
-    {
-      "expected": "ABNORMAL_02",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
-    },
-    {
-      "expected": "ABNORMAL_02",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
-    },
-    {
-      "expected": "ABNORMAL_03",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
-    },
-    {
-      "expected": "ABNORMAL_03",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
-    },
-    {
-      "expected": "ABNORMAL_04",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
-    },
-    {
-      "expected": "ABNORMAL_04",
-      "predicted": "UNKNOWN",
-      "correct": false,
-      "confidence": 0.0
-    },
-    {
-      "expected": "ABNORMAL_05",
-      "predicted": "ABNORMAL_05",
-      "correct": true,
-      "confidence": 0.9
-    },
-    {
-      "expected": "ABNORMAL_05",
-      "predicted": "ABNORMAL_05",
-      "correct": true,
-      "confidence": 1.0
-    },
-    {
-      "expected": "ABNORMAL_06",
-      "predicted": "DELIVERED_04",
-      "correct": false,
-      "confidence": 1.0
-    },
-    {
-      "expected": "ABNORMAL_06",
-      "predicted": "DELIVERED_04",
-      "correct": false,
-      "confidence": 0.8
-    },
-    {
-      "expected": "ABNORMAL_07",
-      "predicted": "ABNORMAL_06",
-      "correct": false,
-      "confidence": 0.9
-    },
-    {
-      "expected": "ABNORMAL_07",
-      "predicted": "DELIVERY_FAILED_01",
-      "correct": false,
-      "confidence": 0.9
+      "confidence": 0.74
     },
     {
       "expected": "ABNORMAL_08",
-      "predicted": "ABNORMAL_03",
+      "predicted": "DELIVERY_FAILED_04",
       "correct": false,
-      "confidence": 0.8
-    },
-    {
-      "expected": "ABNORMAL_08",
-      "predicted": "ABNORMAL_05",
-      "correct": false,
-      "confidence": 0.8
+      "confidence": 0.7
     },
     {
       "expected": "INFO_RECEIVED_01",
       "predicted": "INFO_RECEIVED_01",
       "correct": true,
-      "confidence": 0.9
+      "confidence": 0.93
     },
     {
       "expected": "INFO_RECEIVED_01",
       "predicted": "INFO_RECEIVED_01",
       "correct": true,
-      "confidence": 1.0
+      "confidence": 0.93
     }
   ]
 }
