@@ -136,6 +136,100 @@ class AnthropicClient(BaseLLMClient):
         )
 
 
+class DeepSeekClient(BaseLLMClient):
+    """Client for DeepSeek API (OpenAI-compatible)."""
+    
+    def __init__(self, api_key: str, model: str = "deepseek-chat"):
+        self.api_key = api_key
+        self.model = model
+        self.base_url = "https://api.deepseek.com"
+        
+        try:
+            from openai import OpenAI
+            self.client = OpenAI(api_key=api_key, base_url=self.base_url)
+        except ImportError:
+            raise ImportError("openai package not installed. Run: pip install openai")
+    
+    def complete(
+        self, 
+        messages: List[Dict], 
+        temperature: float = 0.0,
+        max_tokens: int = 2000,
+        **kwargs
+    ) -> LLMResponse:
+        start_time = time.time()
+        
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            **kwargs
+        )
+        
+        latency_ms = (time.time() - start_time) * 1000
+        
+        return LLMResponse(
+            content=response.choices[0].message.content,
+            model=self.model,
+            provider="deepseek",
+            usage={
+                "prompt_tokens": response.usage.prompt_tokens,
+                "completion_tokens": response.usage.completion_tokens,
+                "total_tokens": response.usage.total_tokens,
+            },
+            latency_ms=latency_ms,
+            raw_response=response
+        )
+
+
+class MoonshotClient(BaseLLMClient):
+    """Client for Kimi/Moonshot API (OpenAI-compatible)."""
+    
+    def __init__(self, api_key: str, model: str = "moonshot-v1-128k"):
+        self.api_key = api_key
+        self.model = model
+        self.base_url = "https://api.moonshot.cn/v1"
+        
+        try:
+            from openai import OpenAI
+            self.client = OpenAI(api_key=api_key, base_url=self.base_url)
+        except ImportError:
+            raise ImportError("openai package not installed. Run: pip install openai")
+    
+    def complete(
+        self, 
+        messages: List[Dict], 
+        temperature: float = 0.0,
+        max_tokens: int = 2000,
+        **kwargs
+    ) -> LLMResponse:
+        start_time = time.time()
+        
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            **kwargs
+        )
+        
+        latency_ms = (time.time() - start_time) * 1000
+        
+        return LLMResponse(
+            content=response.choices[0].message.content,
+            model=self.model,
+            provider="moonshot",
+            usage={
+                "prompt_tokens": response.usage.prompt_tokens,
+                "completion_tokens": response.usage.completion_tokens,
+                "total_tokens": response.usage.total_tokens,
+            },
+            latency_ms=latency_ms,
+            raw_response=response
+        )
+
+
 class LLMClientFactory:
     """Factory for creating LLM clients."""
     
@@ -160,6 +254,10 @@ class LLMClientFactory:
             return OpenAIClient(api_key=api_key, model=model, base_url=base_url)
         elif provider == "anthropic":
             return AnthropicClient(api_key=api_key, model=model)
+        elif provider == "deepseek":
+            return DeepSeekClient(api_key=api_key, model=model)
+        elif provider == "moonshot" or provider == "kimi":
+            return MoonshotClient(api_key=api_key, model=model)
         else:
             raise ValueError(f"Unknown provider: {provider}")
 
