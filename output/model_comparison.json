@@ -1,0 +1,73 @@
+{
+  "summary": {
+    "kimi": {
+      "accuracy": 0.6785714285714286,
+      "main_accuracy": 0.8928571428571429,
+      "errors": 9
+    },
+    "gpt5": {
+      "accuracy": 0.7857142857142857,
+      "main_accuracy": 0.8571428571428571,
+      "errors": 6
+    },
+    "claude45": {
+      "accuracy": 0.8928571428571429,
+      "main_accuracy": 0.8928571428571429,
+      "errors": 3
+    }
+  },
+  "common_errors": [
+    {
+      "case": "ABNORMAL_08",
+      "kimi": "OK",
+      "gpt5": "DELIVERY_FAILED_04",
+      "claude45": "DELIVERY_FAILED_04",
+      "error_count": 2
+    },
+    {
+      "case": "WAITING_DELIVERY_01",
+      "kimi": "IN_TRANSIT_07",
+      "gpt5": "IN_TRANSIT_07",
+      "claude45": "IN_TRANSIT_07",
+      "error_count": 3
+    },
+    {
+      "case": "IN_TRANSIT_01",
+      "kimi": "IN_TRANSIT_02",
+      "gpt5": "IN_TRANSIT_02",
+      "claude45": "OK",
+      "error_count": 2
+    },
+    {
+      "case": "WAITING_DELIVERY_03",
+      "kimi": "DELIVERY_FAILED_04",
+      "gpt5": "DELIVERY_FAILED_04",
+      "claude45": "DELIVERY_FAILED_04",
+      "error_count": 3
+    }
+  ],
+  "kimi_errors": {
+    "IN_TRANSIT_01": "IN_TRANSIT_02",
+    "IN_TRANSIT_02": "IN_TRANSIT_06",
+    "IN_TRANSIT_04": "IN_TRANSIT_03",
+    "IN_TRANSIT_08": "IN_TRANSIT_05",
+    "WAITING_DELIVERY_01": "IN_TRANSIT_07",
+    "WAITING_DELIVERY_03": "DELIVERY_FAILED_04",
+    "DELIVERED_02": "DELIVERED_01",
+    "DELIVERY_FAILED_02": "WAITING_DELIVERY_03",
+    "DELIVERY_FAILED_04": "DELIVERY_FAILED_02"
+  },
+  "gpt5_errors": {
+    "IN_TRANSIT_01": "IN_TRANSIT_02",
+    "WAITING_DELIVERY_01": "IN_TRANSIT_07",
+    "WAITING_DELIVERY_03": "DELIVERY_FAILED_04",
+    "DELIVERED_03": "DELIVERED_01",
+    "ABNORMAL_07": "DELIVERY_FAILED_01",
+    "ABNORMAL_08": "DELIVERY_FAILED_04"
+  },
+  "claude45_errors": {
+    "WAITING_DELIVERY_01": "IN_TRANSIT_07",
+    "WAITING_DELIVERY_03": "DELIVERY_FAILED_04",
+    "ABNORMAL_08": "DELIVERY_FAILED_04"
+  }
+}

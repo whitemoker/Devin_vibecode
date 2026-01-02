@@ -1,0 +1,354 @@
+{
+  "total": 28,
+  "correct": 19,
+  "accuracy": 0.6785714285714286,
+  "main_correct": 25,
+  "main_accuracy": 0.8928571428571429,
+  "errors_by_status": {
+    "IN_TRANSIT_01": [
+      {
+        "expected": "IN_TRANSIT_01",
+        "predicted": "IN_TRANSIT_02",
+        "confidence": 1.0
+      }
+    ],
+    "IN_TRANSIT_02": [
+      {
+        "expected": "IN_TRANSIT_02",
+        "predicted": "IN_TRANSIT_06",
+        "confidence": 1.0
+      }
+    ],
+    "IN_TRANSIT_04": [
+      {
+        "expected": "IN_TRANSIT_04",
+        "predicted": "IN_TRANSIT_03",
+        "confidence": 1.0
+      }
+    ],
+    "IN_TRANSIT_08": [
+      {
+        "expected": "IN_TRANSIT_08",
+        "predicted": "IN_TRANSIT_05",
+        "confidence": 1.0
+      }
+    ],
+    "WAITING_DELIVERY_01": [
+      {
+        "expected": "WAITING_DELIVERY_01",
+        "predicted": "IN_TRANSIT_07",
+        "confidence": 1.0
+      }
+    ],
+    "WAITING_DELIVERY_03": [
+      {
+        "expected": "WAITING_DELIVERY_03",
+        "predicted": "DELIVERY_FAILED_04",
+        "confidence": 1.0
+      }
+    ],
+    "DELIVERED_02": [
+      {
+        "expected": "DELIVERED_02",
+        "predicted": "DELIVERED_01",
+        "confidence": 1.0
+      }
+    ],
+    "DELIVERY_FAILED_02": [
+      {
+        "expected": "DELIVERY_FAILED_02",
+        "predicted": "WAITING_DELIVERY_03",
+        "confidence": 1.0
+      }
+    ],
+    "DELIVERY_FAILED_04": [
+      {
+        "expected": "DELIVERY_FAILED_04",
+        "predicted": "DELIVERY_FAILED_02",
+        "confidence": 0.9
+      }
+    ]
+  },
+  "results": [
+    {
+      "expected_sub": "IN_TRANSIT_01",
+      "predicted_sub": "IN_TRANSIT_02",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": false,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据提供的物流轨迹信息，包裹已经在中国邮政的东莞市国际公司直属国际营业部完成分拣，并已离开该营业部发往广商中心。同时，包裹也已离开和到达东莞市的处理中心。这表明包裹正在运输途中，并且已经到达了分拣中心，因此状态被分类为IN_TRANSIT_02。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_02",
+      "predicted_sub": "IN_TRANSIT_06",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": false,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹已经从UPS Facility出发，经过多个UPS Facility的处理，并最终被USPS接收。特别是'2025-12-16 14:07:00 Arrived at USPS Facility US'表明包裹已经到达了USPS的设施，这意味着包裹已经抵达目的国，并且正在USPS的网络中进行处理。因此，包裹的状态是'IN_TRANSIT_06'。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_03",
+      "predicted_sub": "IN_TRANSIT_03",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹已经完成了海关清关，这是包裹从中国运往美国途中的一个重要步骤。因此，包裹目前的状态是'IN_TRANSIT_03: 包裹已完成海关清关'。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_04",
+      "predicted_sub": "IN_TRANSIT_03",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": false,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹已经完成海关清关，状态为IN_TRANSIT_03。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_05",
+      "predicted_sub": "IN_TRANSIT_05",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据物流轨迹信息，最新一条显示'航空公司接收'，表明包裹已经交由航空公司运输，正在运往目的国途中。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_06",
+      "predicted_sub": "IN_TRANSIT_06",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "轨迹中显示包裹已经到达目的地机场/港口，表明包裹已经抵达目的国，符合'IN_TRANSIT_06'状态。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_07",
+      "predicted_sub": "IN_TRANSIT_07",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.9,
+      "explanation": "根据轨迹信息，包裹已到达当地FedEx设施，表明包裹已到达当地网点，即将派送。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_08",
+      "predicted_sub": "IN_TRANSIT_05",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": false,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹已经多次被航空公司接收并启运，表明包裹已经交由航空公司运输，正在飞往目的国的途中。"
+    },
+    {
+      "expected_sub": "WAITING_DELIVERY_01",
+      "predicted_sub": "IN_TRANSIT_07",
+      "expected_main": "Out for delivery/派送中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": false,
+      "is_main_correct": false,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹已经到达当地网点（Rixheim），并且预计在当天派送，这符合'包裹已到达当地网点，即将派送'的状态。"
+    },
+    {
+      "expected_sub": "WAITING_DELIVERY_02",
+      "predicted_sub": "WAITING_DELIVERY_02",
+      "expected_main": "Out for delivery/派送中",
+      "predicted_main": "Out for delivery/派送中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹已经到达零售网点Filiale Edisonstr. 12, 28357 Bremen，并且可以被领取，表明包裹已到自提点，等待领取。"
+    },
+    {
+      "expected_sub": "WAITING_DELIVERY_03",
+      "predicted_sub": "DELIVERY_FAILED_04",
+      "expected_main": "Out for delivery/派送中",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": false,
+      "is_main_correct": false,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹在尝试派送时因为无法找到一个安全的投递地点而留下通知，表明派送失败，属于其他原因导致的派送失败。"
+    },
+    {
+      "expected_sub": "DELIVERED_01",
+      "predicted_sub": "DELIVERED_01",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "轨迹中明确提到了'The shipment has been successfully delivered Germany'，表明包裹已经成功送达，因此状态为已签收。"
+    },
+    {
+      "expected_sub": "DELIVERED_02",
+      "predicted_sub": "DELIVERED_01",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": false,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹在2025-12-01 16:08:00显示为'The item is collected at the pick-up point'，表明包裹已经被取件点收集，这通常意味着包裹已经被成功送达，因此状态被分类为'DELIVERED_01'。"
+    },
+    {
+      "expected_sub": "DELIVERED_03",
+      "predicted_sub": "DELIVERED_03",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息中的'Signature Obtained Palmerston North'，表明包裹已经被签收，且有签名为证，因此状态为已成功送达。"
+    },
+    {
+      "expected_sub": "DELIVERED_04",
+      "predicted_sub": "DELIVERED_04",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息中的最后一条记录，包裹已经被投递至收件人社区的邮箱、包裹柜或公寓邮箱，符合'DELIVERED_04'状态，表示包裹已投递至收件人地址，可能由房主、门卫、家人、邻居代收，或放置在家门口、门廊（Front Door / Porch）或其他安全位置。"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_01",
+      "predicted_sub": "DELIVERY_FAILED_01",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息中的'Delivery attempt unsuccessful.Delivery attempt unsuccessful.Delivery address is incorrect'，表明由于提供的收件地址不正确导致派送失败，符合投递失败中因地址问题派送失败的情况。"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_02",
+      "predicted_sub": "WAITING_DELIVERY_03",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Out for delivery/派送中",
+      "is_correct": false,
+      "is_main_correct": false,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹在2025-12-16显示'Your driver Stephen won't be back today but you can still rearrange your delivery'，表明派送失败，需要重新安排派送。同时在2025-12-15有记录'Your parcel could not be delivered as the receiver could not provide a valid PIN code'，说明由于收件人未能提供有效的PIN码导致派送失败。因此，包裹目前状态为等待重新派送。"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_03",
+      "predicted_sub": "DELIVERY_FAILED_03",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息中的'2025-12-05 11:27:37 Unsuccessful Delivery Does not answer the phone'，表明包裹在派送时因为收件人不接听电话导致派送失败。"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_04",
+      "predicted_sub": "DELIVERY_FAILED_02",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": false,
+      "is_main_correct": true,
+      "confidence": 0.9,
+      "explanation": "根据轨迹信息，包裹在2025-12-16 10:13:52有一次派送尝试，但未成功，这表明可能是由于收件人不在家导致派送失败。"
+    },
+    {
+      "expected_sub": "ABNORMAL_01",
+      "predicted_sub": "ABNORMAL_01",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息中的'2025-12-06 11:44 UNCLAIMED'，表明包裹无人领取，符合异常状态中的包裹无人领取情况。"
+    },
+    {
+      "expected_sub": "ABNORMAL_02",
+      "predicted_sub": "ABNORMAL_02",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹在2025-12-05被瑞士海关扣留进行查验，并且2025-12-06有进一步通知要求收件人配合海关处理清关查验事宜，表明包裹目前处于海关扣留状态。"
+    },
+    {
+      "expected_sub": "ABNORMAL_03",
+      "predicted_sub": "ABNORMAL_03",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息中的'Package lost'记录，表明包裹在AIRWAY HEIGHTS, WA, US丢失，符合包裹丢失的异常情况。"
+    },
+    {
+      "expected_sub": "ABNORMAL_04",
+      "predicted_sub": "ABNORMAL_04",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "轨迹中显示'Forsendelsen er annulleret'，意味着订单已被取消，因此包裹状态属于异常中的订单取消。"
+    },
+    {
+      "expected_sub": "ABNORMAL_05",
+      "predicted_sub": "ABNORMAL_05",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "轨迹信息中显示'Consignee Refused To Accept Mumbai North Warehouse'，表明收件人拒绝签收，符合异常状态中的收件人拒绝签收情况。"
+    },
+    {
+      "expected_sub": "ABNORMAL_06",
+      "predicted_sub": "ABNORMAL_06",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹最终被标记为'Delivered, To Original Sender'，意味着包裹已经被送回并由发件人接收，符合'ABNORMAL_06'状态，即退回包裹已被发件人接收。"
+    },
+    {
+      "expected_sub": "ABNORMAL_07",
+      "predicted_sub": "ABNORMAL_07",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息，包裹因地址无效导致派送失败，并已返回仓库。这表明包裹正在返回发件人途中，符合ABNORMAL_07状态。"
+    },
+    {
+      "expected_sub": "ABNORMAL_08",
+      "predicted_sub": "ABNORMAL_08",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.9,
+      "explanation": "根据轨迹信息，包裹在2025-12-15 07:31:00出现了'Delivery Exception'，表明在派送过程中出现了异常情况，因此判断包裹状态为可能异常（ABNORMAL_08）。"
+    },
+    {
+      "expected_sub": "INFO_RECEIVED_01",
+      "predicted_sub": "INFO_RECEIVED_01",
+      "expected_main": "Info received/等待揽收",
+      "predicted_main": "Info received/等待揽收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 1.0,
+      "explanation": "根据轨迹信息中的'Shipment information received'，表明承运方已收到发件人请求，正在揽件，符合'Info received/等待揽收'分类中的INFO_RECEIVED_01状态。"
+    }
+  ]
+}

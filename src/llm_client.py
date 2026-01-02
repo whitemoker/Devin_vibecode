@@ -230,6 +230,53 @@ class MoonshotClient(BaseLLMClient):
         )
 
 
+class AbacusClient(BaseLLMClient):
+    """Client for Abacus.ai RouteLLM API (OpenAI-compatible)."""
+    
+    def __init__(self, api_key: str, model: str = "gpt-5"):
+        self.api_key = api_key
+        self.model = model
+        self.base_url = "https://routellm.abacus.ai/v1"
+        
+        try:
+            from openai import OpenAI
+            self.client = OpenAI(api_key=api_key, base_url=self.base_url)
+        except ImportError:
+            raise ImportError("openai package not installed. Run: pip install openai")
+    
+    def complete(
+        self, 
+        messages: List[Dict], 
+        temperature: float = 0.0,
+        max_tokens: int = 2000,
+        **kwargs
+    ) -> LLMResponse:
+        start_time = time.time()
+        
+        response = self.client.chat.completions.create(
+            model=self.model,
+            messages=messages,
+            temperature=temperature,
+            max_tokens=max_tokens,
+            **kwargs
+        )
+        
+        latency_ms = (time.time() - start_time) * 1000
+        
+        return LLMResponse(
+            content=response.choices[0].message.content,
+            model=self.model,
+            provider="abacus",
+            usage={
+                "prompt_tokens": response.usage.prompt_tokens if response.usage else 0,
+                "completion_tokens": response.usage.completion_tokens if response.usage else 0,
+                "total_tokens": response.usage.total_tokens if response.usage else 0,
+            },
+            latency_ms=latency_ms,
+            raw_response=response
+        )
+
+
 class LLMClientFactory:
     """Factory for creating LLM clients."""
     
@@ -258,6 +305,8 @@ class LLMClientFactory:
             return DeepSeekClient(api_key=api_key, model=model)
         elif provider == "moonshot" or provider == "kimi":
             return MoonshotClient(api_key=api_key, model=model)
+        elif provider == "abacus":
+            return AbacusClient(api_key=api_key, model=model)
         else:
             raise ValueError(f"Unknown provider: {provider}")
 

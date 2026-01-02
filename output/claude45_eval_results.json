@@ -1,0 +1,291 @@
+{
+  "model": "claude-opus-4-5-20251101",
+  "provider": "abacus",
+  "total": 28,
+  "correct": 25,
+  "accuracy": 0.8928571428571429,
+  "main_correct": 25,
+  "main_accuracy": 0.8928571428571429,
+  "results": [
+    {
+      "expected_sub": "IN_TRANSIT_01",
+      "predicted_sub": "IN_TRANSIT_01",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "邮件离开东莞，正在发往广商中心，包裹处于国内运输途中"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_02",
+      "predicted_sub": "IN_TRANSIT_02",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.85,
+      "explanation": "Arrived at USPS Facility 表明包裹已到达分拣中心，正在等待进一步处理"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_03",
+      "predicted_sub": "IN_TRANSIT_03",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "Customs clearance completed表明包裹已完成海关清关"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_04",
+      "predicted_sub": "IN_TRANSIT_04",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "【郑州市国际互换局】已出口直封，表明包裹已封装好，即将出口。"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_05",
+      "predicted_sub": "IN_TRANSIT_05",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "\"航空公司接收\" 表明包裹已交航空公司，正在运往目的国挪威"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_06",
+      "predicted_sub": "IN_TRANSIT_06",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "最新轨迹显示'到达目的地机场/港口'，表明包裹已抵达目的国"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_07",
+      "predicted_sub": "IN_TRANSIT_07",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.9,
+      "explanation": "At local FedEx facility CROYDON 表明包裹已到达当地网点，即将派送"
+    },
+    {
+      "expected_sub": "IN_TRANSIT_08",
+      "predicted_sub": "IN_TRANSIT_08",
+      "expected_main": "In transit/运输途中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.9,
+      "explanation": "\"航空公司启运\"表明包裹已上飞机，航班已起飞，正在运往目的国途中。"
+    },
+    {
+      "expected_sub": "WAITING_DELIVERY_01",
+      "predicted_sub": "IN_TRANSIT_07",
+      "expected_main": "Out for delivery/派送中",
+      "predicted_main": "In transit/运输途中",
+      "is_correct": false,
+      "is_main_correct": false,
+      "confidence": 0.9,
+      "explanation": "包裹已到达当地网点Rixheim，'expected to be delivered during the day'表明即将派送"
+    },
+    {
+      "expected_sub": "WAITING_DELIVERY_02",
+      "predicted_sub": "WAITING_DELIVERY_02",
+      "expected_main": "Out for delivery/派送中",
+      "predicted_main": "Out for delivery/派送中",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "包裹已到自提点等待领取。关键证据：'The shipment is available for pick-up from the retail outlet...as of now'"
+    },
+    {
+      "expected_sub": "WAITING_DELIVERY_03",
+      "predicted_sub": "DELIVERY_FAILED_04",
+      "expected_main": "Out for delivery/派送中",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": false,
+      "is_main_correct": false,
+      "confidence": 0.9,
+      "explanation": "Notice Left (No Secure Location Available) 表明派送失败，因为没有安全的投递位置可用。"
+    },
+    {
+      "expected_sub": "DELIVERED_01",
+      "predicted_sub": "DELIVERED_01",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "最新轨迹显示'The shipment has been successfully delivered'，包裹已成功送达"
+    },
+    {
+      "expected_sub": "DELIVERED_02",
+      "predicted_sub": "DELIVERED_02",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "\"The item is collected at the pick-up point\"表明收件人已在自提点领取包裹"
+    },
+    {
+      "expected_sub": "DELIVERED_03",
+      "predicted_sub": "DELIVERED_03",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "Signature Obtained表明包裹已被签收，收件人已签名确认收货"
+    },
+    {
+      "expected_sub": "DELIVERED_04",
+      "predicted_sub": "DELIVERED_04",
+      "expected_main": "Delivered/签收",
+      "predicted_main": "Delivered/签收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "DELIVERED TO YOUR COMMUNITY MAILBOX, PARCEL LOCKER OR APT CONDO MAILBOX 表明包裹已投递至社区邮箱/包裹柜"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_01",
+      "predicted_sub": "DELIVERY_FAILED_01",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "Delivery attempt unsuccessful. Delivery address is incorrect 明确表明因地址问题派送失败"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_02",
+      "predicted_sub": "DELIVERY_FAILED_02",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.85,
+      "explanation": "\"We missed you\" 表明收件人不在家，司机无法完成派送"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_03",
+      "predicted_sub": "DELIVERY_FAILED_03",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "最新轨迹显示'Unsuccessful Delivery Does not answer the phone'，因无法联系上收件人导致派送失败"
+    },
+    {
+      "expected_sub": "DELIVERY_FAILED_04",
+      "predicted_sub": "DELIVERY_FAILED_04",
+      "expected_main": "Failed attempt/投递失败",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.85,
+      "explanation": "最新轨迹显示'Delivery attempt unsuccessful'，投递尝试失败，但未说明具体原因（非地址问题、收件人不在或无法联系）"
+    },
+    {
+      "expected_sub": "ABNORMAL_01",
+      "predicted_sub": "ABNORMAL_01",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "最新状态显示'UNCLAIMED'（无人领取），包裹在自提点等待16天后仍未被领取"
+    },
+    {
+      "expected_sub": "ABNORMAL_02",
+      "predicted_sub": "ABNORMAL_02",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "Customs retention or investigation 和 瑞士海关查验 表明包裹被海关扣留"
+    },
+    {
+      "expected_sub": "ABNORMAL_03",
+      "predicted_sub": "ABNORMAL_03",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "最新轨迹显示'Package lost'，表明包裹已丢失"
+    },
+    {
+      "expected_sub": "ABNORMAL_04",
+      "predicted_sub": "ABNORMAL_04",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "Forsendelsen er annulleret（丹麦语：货件已取消）明确表明订单已被取消"
+    },
+    {
+      "expected_sub": "ABNORMAL_05",
+      "predicted_sub": "ABNORMAL_05",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "Consignee Refused To Accept 表明收件人拒绝签收包裹"
+    },
+    {
+      "expected_sub": "ABNORMAL_06",
+      "predicted_sub": "ABNORMAL_06",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "Delivered, To Original Sender 表明退回包裹已被发件人接收，原因是 Return to Sender - Insufficient Address（地址不完整）"
+    },
+    {
+      "expected_sub": "ABNORMAL_07",
+      "predicted_sub": "ABNORMAL_07",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Exception/可能异常",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "最新轨迹显示'Parcel returned to warehouse'和'Failed delivery attempt, returning to the warehouse'，表明因地址无效(Invalid address)派送失败后包裹正在返回途中。"
+    },
+    {
+      "expected_sub": "ABNORMAL_08",
+      "predicted_sub": "DELIVERY_FAILED_04",
+      "expected_main": "Exception/可能异常",
+      "predicted_main": "Failed attempt/投递失败",
+      "is_correct": false,
+      "is_main_correct": false,
+      "confidence": 0.85,
+      "explanation": "最新轨迹显示'Delivery Exception'表明派送出现异常，之前已在派送中(Delivery In Progress)，但未说明具体失败原因，归类为其他原因派送失败"
+    },
+    {
+      "expected_sub": "INFO_RECEIVED_01",
+      "predicted_sub": "INFO_RECEIVED_01",
+      "expected_main": "Info received/等待揽收",
+      "predicted_main": "Info received/等待揽收",
+      "is_correct": true,
+      "is_main_correct": true,
+      "confidence": 0.95,
+      "explanation": "\"Shipment information received\" 表明承运方刚收到发件信息，包裹尚未揽收"
+    }
+  ]
+}
