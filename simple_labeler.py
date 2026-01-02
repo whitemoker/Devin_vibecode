@@ -65,9 +65,13 @@ class SimpleLabeler:
         with open(taxonomy_path, 'r', encoding='utf-8') as f:
             self.taxonomy = json.load(f)
         
-        # Load prompt template
+        # Load prompt template (supports both YAML and JSON)
         with open(template_path, 'r', encoding='utf-8') as f:
-            self.template = json.load(f)
+            if template_path.endswith('.yaml') or template_path.endswith('.yml'):
+                import yaml
+                self.template = yaml.safe_load(f)
+            else:
+                self.template = json.load(f)
         
         # Load sample cases
         with open(sample_cases_path, 'r', encoding='utf-8') as f:
