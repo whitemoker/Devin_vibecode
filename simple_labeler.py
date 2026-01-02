@@ -1,11 +1,12 @@
 """
 Simplified labeler for logistics status classification.
 Uses a single prompt template file for easy customization.
+Supports optional name anonymization before sending to LLM.
 """
 import json
 import re
 from typing import Dict, List, Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from llm_client import BaseLLMClient
 
@@ -20,17 +21,23 @@ class LabelResult:
     explanation: str
     is_valid: bool = True
     error: str = ""
+    # Anonymization info
+    original_trace: str = ""
+    anonymized_trace: str = ""
+    detected_names: List[Dict] = field(default_factory=list)
 
 
 class SimpleLabeler:
     """
     Simple labeler that uses a template file for prompts.
+    Supports optional name anonymization before sending to LLM.
     
     Usage:
         labeler = SimpleLabeler(
             client=your_llm_client,
             taxonomy_path="taxonomy.json",
-            template_path="prompt_template.json"
+            template_path="prompt_template.json",
+            anonymize=True  # Enable name anonymization
         )
         result = labeler.label(trace_text)
     """
@@ -42,9 +49,17 @@ class SimpleLabeler:
         template_path: str = "prompt_template.json",
         sample_cases_path: str = "sample_cases.json",
         num_examples: int = 3,
+        anonymize: bool = False,
     ):
         self.client = client
         self.num_examples = num_examples
+        self.anonymize = anonymize
+        self.anonymizer = None
+        
+        # Initialize anonymizer if enabled
+        if self.anonymize:
+            from anonymizer import NameAnonymizer
+            self.anonymizer = NameAnonymizer()
         
         # Load taxonomy
         with open(taxonomy_path, 'r', encoding='utf-8') as f:
@@ -180,11 +195,27 @@ class SimpleLabeler:
         Returns:
             LabelResult with predicted status
         """
+        original_trace = trace
+        anonymized_trace = trace
+        detected_names = []
+        
+        # Anonymize if enabled
+        if self.anonymize and self.anonymizer:
+            anon_result = self.anonymizer.anonymize_trace(trace)
+            anonymized_trace = anon_result.anonymized_text
+            detected_names = anon_result.detected_names
+            trace = anonymized_trace  # Use anonymized trace for LLM
+        
         messages = self._build_prompt(trace)
         
         try:
             response = self.client.complete(messages, temperature=0.0, max_tokens=500)
-            return self._parse_response(response.content)
+            result = self._parse_response(response.content)
+            # Add anonymization info to result
+            result.original_trace = original_trace
+            result.anonymized_trace = anonymized_trace
+            result.detected_names = detected_names
+            return result
         except Exception as e:
             return LabelResult(
                 sub_status="",
@@ -193,7 +224,10 @@ class SimpleLabeler:
                 evidence=[],
                 explanation="",
                 is_valid=False,
-                error=f"API error: {e}"
+                error=f"API error: {e}",
+                original_trace=original_trace,
+                anonymized_trace=anonymized_trace,
+                detected_names=detected_names
             )
     
     def label_batch(self, traces: List[str]) -> List[LabelResult]:
