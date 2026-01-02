@@ -1,0 +1,154 @@
+{
+  "In transit/运输途中": {
+    "IN_TRANSIT_01": {
+      "eng_meaning": "Parcel is on it's way.",
+      "chn_meaning": "包裹正在运输途中",
+      "is_default": true
+    },
+    "IN_TRANSIT_02": {
+      "eng_meaning": "Parcels have arrived at the sorting center.",
+      "chn_meaning": "包裹已到达分拣中心",
+      "is_default": false
+    },
+    "IN_TRANSIT_03": {
+      "eng_meaning": "Parcel customs clearance completed.",
+      "chn_meaning": "包裹已完成海关清关",
+      "is_default": false
+    },
+    "IN_TRANSIT_04": {
+      "eng_meaning": "Dispatching, the package has been encapsulated and will be sent to the airport soon.",
+      "chn_meaning": "包裹已封装，即将送往机场",
+      "is_default": false
+    },
+    "IN_TRANSIT_05": {
+      "eng_meaning": "The package has been handed over to the airline and is being sent to the destination country.",
+      "chn_meaning": "包裹已交航空公司，运往目的国",
+      "is_default": false
+    },
+    "IN_TRANSIT_06": {
+      "eng_meaning": "Landed, the package has arrived in the destination country.",
+      "chn_meaning": "包裹已抵达目的国",
+      "is_default": false
+    },
+    "IN_TRANSIT_07": {
+      "eng_meaning": "The parcel has arrived at the local post office or courier outlet and delivery will be arranged soon.",
+      "chn_meaning": "包裹已到达当地网点，即将派送",
+      "is_default": false
+    },
+    "IN_TRANSIT_08": {
+      "eng_meaning": "The package is on the plane and the plane has departed.",
+      "chn_meaning": "包裹已上飞机，航班已起飞",
+      "is_default": false
+    }
+  },
+  "Out for delivery/派送中": {
+    "WAITING_DELIVERY_01": {
+      "eng_meaning": "The parcel is out for delivery.",
+      "chn_meaning": "包裹正在派送途中",
+      "is_default": true
+    },
+    "WAITING_DELIVERY_02": {
+      "eng_meaning": "The parcel has arrived at the collection point for receipts to pick up.",
+      "chn_meaning": "包裹已到自提点，等待领取",
+      "is_default": false
+    },
+    "WAITING_DELIVERY_03": {
+      "eng_meaning": "The recipient requests a delayed delivery or the courier leaves a note after a failed delivery waiting for a second delivery.",
+      "chn_meaning": "收件人要求延迟派送或投递失败后等待二次派送",
+      "is_default": false
+    }
+  },
+  "Delivered/签收": {
+    "DELIVERED_01": {
+      "eng_meaning": "Parcel delivered successfully.",
+      "chn_meaning": "包裹已成功送达",
+      "is_default": true
+    },
+    "DELIVERED_02": {
+      "eng_meaning": "Successful pick-up by the recipient at the collection point.",
+      "chn_meaning": "收件人在自提点已领取包裹",
+      "is_default": false
+    },
+    "DELIVERED_03": {
+      "eng_meaning": "Parcel delivered and signed by the customer.",
+      "chn_meaning": "包裹已签收（客户本人）",
+      "is_default": false
+    },
+    "DELIVERED_04": {
+      "eng_meaning": "Parcel delivered to the recipient’s property, which may include delivery to property owners, doormen, family members, neighbors, or being left at the front door, porch, or a safe place near the entrance.",
+      "chn_meaning": "包裹已投递至收件人地址，可能由房主、门卫、家人、邻居代收，或放置在家门口、门廊（Front Door / Porch）或其他安全位置。",
+      "is_default": false
+    }
+  },
+  "Failed attempt/投递失败": {
+    "DELIVERY_FAILED_01": {
+      "eng_meaning": "Delivery failed due to address related issues.",
+      "chn_meaning": "因地址问题派送失败",
+      "is_default": false
+    },
+    "DELIVERY_FAILED_02": {
+      "eng_meaning": "Delivery failed due to the recipient was not at home.",
+      "chn_meaning": "因收件人不在家派送失败",
+      "is_default": false
+    },
+    "DELIVERY_FAILED_03": {
+      "eng_meaning": "Delivery failed due to the recipient can not being reached.",
+      "chn_meaning": "因无法联系上收件人派送失败",
+      "is_default": false
+    },
+    "DELIVERY_FAILED_04": {
+      "eng_meaning": "Delivery failed due to other reasons.",
+      "chn_meaning": "因其他原因派送失败",
+      "is_default": true
+    }
+  },
+  "Exception/可能异常": {
+    "ABNORMAL_01": {
+      "eng_meaning": "Parcel unclaimed.",
+      "chn_meaning": "包裹无人领取",
+      "is_default": false
+    },
+    "ABNORMAL_02": {
+      "eng_meaning": "Parcels detained by customs.",
+      "chn_meaning": "包裹被海关扣留",
+      "is_default": false
+    },
+    "ABNORMAL_03": {
+      "eng_meaning": "The package is damaged, lost, or discarded.",
+      "chn_meaning": "包裹损坏、丢失或被丢弃",
+      "is_default": false
+    },
+    "ABNORMAL_04": {
+      "eng_meaning": "The order is canceled.",
+      "chn_meaning": "订单已取消",
+      "is_default": false
+    },
+    "ABNORMAL_05": {
+      "eng_meaning": "The recipient refuses to accept the parcel.",
+      "chn_meaning": "收件人拒绝签收",
+      "is_default": false
+    },
+    "ABNORMAL_06": {
+      "eng_meaning": "The return package has been successfully received by the sender.",
+      "chn_meaning": "退回包裹已被发件人接收",
+      "is_default": false
+    },
+    "ABNORMAL_07": {
+      "eng_meaning": "The package is on its way to the sender.",
+      "chn_meaning": "包裹正在返回发件人途中",
+      "is_default": false
+    },
+    "ABNORMAL_08": {
+      "eng_meaning": "Other exceptions.",
+      "chn_meaning": "其他异常情况",
+      "is_default": true
+    }
+  },
+  "Info received/等待揽收": {
+    "INFO_RECEIVED_01": {
+      "eng_meaning": "The carrier has received a request from the shipper and is preparing to pick up the package.",
+      "chn_meaning": "承运方已收到发件人请求，正在揽件",
+      "is_default": true
+    }
+  }
+}
