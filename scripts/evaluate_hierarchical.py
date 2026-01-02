@@ -138,10 +138,78 @@ def evaluate_model(
     return results, stats
 
 
+def generate_confusion_matrix(results: List[EvalResult], all_labels: List[str]) -> Dict[str, Dict[str, int]]:
+    """Generate confusion matrix from results."""
+    matrix = {label: {l: 0 for l in all_labels} for label in all_labels}
+    for r in results:
+        expected = r.expected_sub
+        predicted = r.predicted_sub
+        if expected in matrix and predicted in all_labels:
+            matrix[expected][predicted] += 1
+        elif expected in matrix:
+            # Handle UNKNOWN or ERROR predictions
+            if "UNKNOWN" not in matrix[expected]:
+                matrix[expected]["UNKNOWN"] = 0
+            matrix[expected]["UNKNOWN"] = matrix[expected].get("UNKNOWN", 0) + 1
+    return matrix
+
+
+def format_confusion_matrix_md(matrix: Dict[str, Dict[str, int]], all_labels: List[str], model_name: str) -> List[str]:
+    """Format confusion matrix as Markdown table."""
+    lines = []
+    lines.append(f"### {model_name} Confusion Matrix\n")
+    
+    # Find labels that have any predictions or expectations
+    active_labels = set()
+    for expected, preds in matrix.items():
+        for pred, count in preds.items():
+            if count > 0:
+                active_labels.add(expected)
+                active_labels.add(pred)
+    
+    # Sort labels
+    sorted_labels = sorted(active_labels)
+    
+    # Add UNKNOWN if any predictions were UNKNOWN
+    has_unknown = any("UNKNOWN" in str(r.predicted_sub) for expected, preds in matrix.items() for pred, count in preds.items() if count > 0 and "UNKNOWN" in str(pred))
+    
+    # Create header
+    header = "| Expected \\ Predicted |"
+    separator = "|---|"
+    for label in sorted_labels:
+        short_label = label.replace("IN_TRANSIT_", "IT").replace("WAITING_DELIVERY_", "WD").replace("DELIVERED_", "DL").replace("DELIVERY_FAILED_", "DF").replace("ABNORMAL_", "AB").replace("INFO_RECEIVED_", "IR")
+        header += f" {short_label} |"
+        separator += "---|"
+    
+    lines.append(header)
+    lines.append(separator)
+    
+    # Create rows
+    for expected in sorted_labels:
+        short_expected = expected.replace("IN_TRANSIT_", "IT").replace("WAITING_DELIVERY_", "WD").replace("DELIVERED_", "DL").replace("DELIVERY_FAILED_", "DF").replace("ABNORMAL_", "AB").replace("INFO_RECEIVED_", "IR")
+        row = f"| {short_expected} |"
+        for predicted in sorted_labels:
+            count = matrix.get(expected, {}).get(predicted, 0)
+            if count > 0:
+                if expected == predicted:
+                    row += f" **{count}** |"  # Bold for correct predictions
+                else:
+                    row += f" {count} |"
+            else:
+                row += " . |"
+        lines.append(row)
+    
+    lines.append("")
+    lines.append("*Legend: IT=IN_TRANSIT, WD=WAITING_DELIVERY, DL=DELIVERED, DF=DELIVERY_FAILED, AB=ABNORMAL, IR=INFO_RECEIVED*\n")
+    
+    return lines
+
+
 def generate_report(
     all_results: Dict[str, List[EvalResult]],
     all_stats: Dict[str, Dict],
-    output_path: str
+    output_path: str,
+    all_labels: List[str] = None
 ):
     """Generate comparison report in Markdown format."""
     lines = ["# Hierarchical Labeler Evaluation Report\n"]
@@ -155,6 +223,14 @@ def generate_report(
         lines.append(f"| {model} | {stats['sub_accuracy']:.2%} ({stats['correct_sub']}/{stats['total']}) | {stats['main_accuracy']:.2%} ({stats['correct_main']}/{stats['total']}) | {stats['uncertain_rate']:.2%} |")
     
     lines.append("")
+    
+    # Confusion matrices
+    if all_labels:
+        lines.append("## Confusion Matrices\n")
+        for model, results in all_results.items():
+            matrix = generate_confusion_matrix(results, all_labels)
+            lines.extend(format_confusion_matrix_md(matrix, all_labels, model))
+        lines.append("")
     
     # Bad cases analysis
     lines.append("## Bad Case Analysis\n")
@@ -383,8 +459,14 @@ def main():
     with open(output_dir / "claude45_hierarchical_results.json", 'w', encoding='utf-8') as f:
         json.dump(claude_output, f, ensure_ascii=False, indent=2)
     
-    # Generate comparison report
-    generate_report(all_results, all_stats, str(output_dir / "hierarchical_comparison_report.md"))
+    # Get all sub-status labels from taxonomy
+    all_labels = []
+    for main_key, subs in taxonomy.items():
+        all_labels.extend(subs.keys())
+    all_labels.append("UNKNOWN")  # Add UNKNOWN for uncertain predictions
+    
+    # Generate comparison report with confusion matrices
+    generate_report(all_results, all_stats, str(output_dir / "hierarchical_comparison_report.md"), all_labels)
     
     print("\n" + "="*50)
     print("Evaluation Complete!")
