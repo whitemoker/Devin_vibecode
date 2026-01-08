@@ -25,11 +25,12 @@
 ## 项目结构
 
 ```
-logistics-labeling/
+Devin_vibecode/
 ├── src/                          # 核心代码
 │   ├── llm_client.py            # LLM客户端（Moonshot, Abacus）
 │   ├── simple_labeler.py        # 单阶段28分类标注器
 │   ├── hierarchical_labeler.py  # 分层分类标注器（两阶段）
+│   ├── ensemble_labeler.py      # 多角度*多模型集成标注器 [NEW]
 │   └── anonymizer.py            # 多语言NER人名脱敏
 ├── resources/
 │   ├── taxonomy/
@@ -40,19 +41,23 @@ logistics-labeling/
 │   └── prompts/
 │       ├── prompt_template.yaml # 单阶段prompt模板
 │       ├── main_stage.yaml      # 分层Stage1模板（主状态）
-│       └── sub_stage.yaml       # 分层Stage2模板（子状态）
+│       ├── sub_stage.yaml       # 分层Stage2模板（子状态）
+│       ├── rule_based.yaml      # 规则优先角度模板 [NEW]
+│       ├── time_based.yaml      # 时间优先角度模板 [NEW]
+│       └── evidence_based.yaml  # 证据优先角度模板 [NEW]
 ├── scripts/
 │   ├── evaluate_all_models.py   # 综合评估脚本
 │   ├── evaluate_models.py       # 单阶段评估脚本
 │   ├── evaluate_hierarchical.py # 分层评估脚本
+│   ├── evaluate_ensemble.py     # 集成标注评估脚本 [NEW]
 │   └── generate_error_analysis.py # 错误分析报告生成
 ├── output/                       # 评估结果输出
 │   ├── full_comparison_report.md # 完整对比报告（含混淆矩阵）
 │   ├── *_single_results.json    # 单阶段评估结果
 │   └── *_hierarchical_results.json # 分层评估结果
-└── test/                         # 测试代码
-    ├── anonymizer.py            # NER脱敏模块
-    └── test_data_with_names.json # 脱敏测试数据
+└── tests/                        # 测试代码
+    └── fixtures/
+        └── test_data_with_names.json # 脱敏测试数据
 ```
 
 ## 分类体系
@@ -120,12 +125,54 @@ python scripts/evaluate_all_models.py
 python scripts/generate_error_analysis.py
 ```
 
+## 多角度*多模型集成标注 [NEW]
+
+### 设计思路
+
+基于多prompt方法的研究，实现了多角度*多模型集成标注框架：
+
+1. **多模型**: 支持GPT-5.2、Grok-4、Kimi等多个LLM模型
+2. **多角度**: 支持不同的prompt视角（规则优先、时间优先、证据优先）
+3. **加权投票**: 使用 `model_weight * prompt_weight * f(confidence)` 进行加权投票
+4. **人工复核标记**: 当模型分歧大或置信度低时，自动标记需要人工复核
+
+### Prompt角度
+
+| 角度 | 文件 | 说明 |
+|------|------|------|
+| rule_based | rule_based.yaml | 严格按优先级规则判断（签收>异常>失败>派送>运输>预报） |
+| time_based | time_based.yaml | 仅关注最新1-3条事件判断当前状态 |
+| evidence_based | evidence_based.yaml | 先提取关键证据，再基于证据分类 |
+| hierarchical | main_stage.yaml + sub_stage.yaml | 两阶段分类（主状态→子状态） |
+
+### 使用方法
+
+```bash
+# 设置环境变量
+export ABACUS_API_KEY="your_abacus_key"
+export KIMI_API_KEY="your_kimi_key"
+
+# 运行集成标注评估
+python scripts/evaluate_ensemble.py --models gpt-5.2 grok-4 --angles rule_based time_based evidence_based
+
+# Dry-run模式（无需API Key）
+python scripts/evaluate_ensemble.py --dry-run --limit 5
+```
+
+### 核心类
+
+- `EnsembleLabeler`: 集成标注器，管理多模型多角度的预测和投票
+- `PromptVariant`: Prompt角度配置
+- `ModelConfig`: 模型配置
+- `EnsembleResult`: 集成结果，包含投票详情和审计轨迹
+
 ## 待完成任务
 
-1. **多模型投票实现**: 基于错误共性分析，实现GPT-5.2 + Grok-4双模型投票
+1. ~~**多模型投票实现**~~: 已完成，见 `src/ensemble_labeler.py`
 2. **200k数据标注**: 使用最佳方案进行大规模标注
 3. **共性错误分析**: 与业务方确认7个共性错误样本的正确标签
 4. **Prompt优化**: 根据bad case分析优化prompt
+5. **集成标注评估**: 等待新API Key后运行评估，对比单模型效果
 
 ## 用户偏好
 
