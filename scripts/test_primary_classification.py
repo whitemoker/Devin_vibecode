@@ -1,6 +1,7 @@
 """
 Test script for primary classification with multiple LLMs and prompts.
-Tests 4 LLMs (Grok-4, GPT-5.2, Claude-4.5, Gemini-3) x 3 prompts on 100 samples.
+Tests 4 LLMs (Grok-4, GPT-5.2, Claude-4.5, Gemini-3) x 3 prompts on samples.
+Supports JSON mode, concurrent API calls, and prompt versioning (v0, v1, etc.)
 """
 import json
 import random
@@ -8,10 +9,13 @@ import time
 import re
 import os
 import sys
+import argparse
 from pathlib import Path
 from dataclasses import dataclass, field
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Optional, Any, Tuple
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import threading
 
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
@@ -121,19 +125,24 @@ def load_prompt(prompt_path: str) -> Dict[str, str]:
         return yaml.safe_load(f)
 
 
-def call_llm(client: OpenAI, model: str, system_prompt: str, user_prompt: str) -> tuple:
+def call_llm(client: OpenAI, model: str, system_prompt: str, user_prompt: str, use_json_mode: bool = True) -> tuple:
     start_time = time.time()
     
     try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
+        kwargs = {
+            "model": model,
+            "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
-            temperature=0.0,
-            max_tokens=500
-        )
+            "temperature": 0.0,
+            "max_tokens": 500
+        }
+        
+        if use_json_mode:
+            kwargs["response_format"] = {"type": "json_object"}
+        
+        response = client.chat.completions.create(**kwargs)
         
         latency_ms = (time.time() - start_time) * 1000
         content = response.choices[0].message.content
@@ -165,61 +174,86 @@ def parse_response(response: str) -> tuple:
 def run_tests(
     samples: List[Dict],
     prompts_dir: str,
-    output_dir: str
+    output_dir: str,
+    prompt_version: str = "",
+    use_json_mode: bool = True,
+    max_workers: int = 4
 ) -> Dict[str, List[TestResult]]:
     
     client = OpenAI(api_key=ABACUS_API_KEY, base_url=ABACUS_BASE_URL)
     
+    # Support versioned prompts (e.g., v0, v1)
+    suffix = f"_{prompt_version}" if prompt_version else ""
     prompt_files = {
-        "rule_based": "primary_rule_based.yaml",
-        "time_based": "primary_time_based.yaml",
-        "evidence_based": "primary_evidence_based.yaml"
+        "rule_based": f"primary_rule_based{suffix}.yaml",
+        "time_based": f"primary_time_based{suffix}.yaml",
+        "evidence_based": f"primary_evidence_based{suffix}.yaml"
     }
     
     prompts = {}
     for name, filename in prompt_files.items():
         path = os.path.join(prompts_dir, filename)
-        prompts[name] = load_prompt(path)
+        if os.path.exists(path):
+            prompts[name] = load_prompt(path)
+        else:
+            print(f"Warning: Prompt file not found: {path}")
     
     results = defaultdict(list)
+    results_lock = threading.Lock()
     total_tests = len(samples) * len(MODELS) * len(prompts)
-    completed = 0
+    completed = [0]
     
     print(f"Running {total_tests} tests ({len(samples)} samples x {len(MODELS)} models x {len(prompts)} prompts)")
+    print(f"Using JSON mode: {use_json_mode}, Concurrent workers: {max_workers}")
+    print(f"Prompt version: {prompt_version or 'default'}")
     print("-" * 80)
     
-    for sample in samples:
+    def process_single_test(sample, model_name, model_id, prompt_name, prompt_data):
         trace = format_trace(sample["events"])
+        system_prompt = prompt_data["system_prompt"]
+        user_prompt = prompt_data["user_prompt"].replace("$trace", trace)
         
+        response, latency = call_llm(client, model_id, system_prompt, user_prompt, use_json_mode)
+        predicted, confidence, explanation = parse_response(response)
+        
+        result = TestResult(
+            tracking_no=sample["tracking_no"],
+            true_label=sample["true_label"],
+            predicted_label=predicted,
+            confidence=confidence,
+            explanation=explanation,
+            model=model_name,
+            prompt_type=prompt_name,
+            latency_ms=latency,
+            raw_response=response
+        )
+        
+        key = f"{model_name}_{prompt_name}"
+        
+        with results_lock:
+            results[key].append(result)
+            completed[0] += 1
+            is_correct = predicted == sample["true_label"]
+            status = "OK" if is_correct else "WRONG"
+            print(f"[{completed[0]}/{total_tests}] {model_name}/{prompt_name}: {sample['true_label']} -> {predicted} [{status}] ({latency:.0f}ms)")
+        
+        return result
+    
+    # Build list of all test tasks
+    tasks = []
+    for sample in samples:
         for model_name, model_id in MODELS.items():
             for prompt_name, prompt_data in prompts.items():
-                system_prompt = prompt_data["system_prompt"]
-                user_prompt = prompt_data["user_prompt"].replace("$trace", trace)
-                
-                response, latency = call_llm(client, model_id, system_prompt, user_prompt)
-                predicted, confidence, explanation = parse_response(response)
-                
-                result = TestResult(
-                    tracking_no=sample["tracking_no"],
-                    true_label=sample["true_label"],
-                    predicted_label=predicted,
-                    confidence=confidence,
-                    explanation=explanation,
-                    model=model_name,
-                    prompt_type=prompt_name,
-                    latency_ms=latency,
-                    raw_response=response
-                )
-                
-                key = f"{model_name}_{prompt_name}"
-                results[key].append(result)
-                
-                completed += 1
-                is_correct = predicted == sample["true_label"]
-                status = "OK" if is_correct else "WRONG"
-                print(f"[{completed}/{total_tests}] {model_name}/{prompt_name}: {sample['true_label']} -> {predicted} [{status}] ({latency:.0f}ms)")
-                
-                time.sleep(0.5)
+                tasks.append((sample, model_name, model_id, prompt_name, prompt_data))
+    
+    # Run tests concurrently
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = [executor.submit(process_single_test, *task) for task in tasks]
+        for future in as_completed(futures):
+            try:
+                future.result()
+            except Exception as e:
+                print(f"Error in test: {e}")
     
     return dict(results)
 
@@ -341,7 +375,15 @@ def generate_report(metrics: Dict[str, Dict], output_path: str):
 
 
 def main():
-    random.seed(42)
+    parser = argparse.ArgumentParser(description="Test primary classification with multiple LLMs and prompts")
+    parser.add_argument("--version", "-v", default="", help="Prompt version (e.g., v0, v1). Empty for default prompts.")
+    parser.add_argument("--samples", "-n", type=int, default=100, help="Number of samples to test (default: 100)")
+    parser.add_argument("--workers", "-w", type=int, default=4, help="Number of concurrent workers (default: 4)")
+    parser.add_argument("--no-json-mode", action="store_true", help="Disable JSON mode for API calls")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed for sampling (default: 42)")
+    args = parser.parse_args()
+    
+    random.seed(args.seed)
     
     project_root = Path(__file__).parent.parent
     goldenset_path = project_root / "goldenset"
@@ -352,8 +394,8 @@ def main():
     print("Loading goldenset...")
     goldenset = load_goldenset(str(goldenset_path))
     
-    print("Sampling 100 balanced records...")
-    samples = sample_balanced(goldenset, 100)
+    print(f"Sampling {args.samples} balanced records...")
+    samples = sample_balanced(goldenset, args.samples)
     print(f"Sampled {len(samples)} records")
     
     category_counts = defaultdict(int)
@@ -362,16 +404,25 @@ def main():
     print(f"Distribution: {dict(category_counts)}")
     
     print("\nRunning tests...")
-    results = run_tests(samples, str(prompts_dir), str(output_dir))
+    results = run_tests(
+        samples, 
+        str(prompts_dir), 
+        str(output_dir),
+        prompt_version=args.version,
+        use_json_mode=not args.no_json_mode,
+        max_workers=args.workers
+    )
     
     print("\nCalculating metrics...")
     metrics = calculate_metrics(results)
     
-    report_path = output_dir / "primary_classification_report.md"
+    # Include version in output filenames
+    version_suffix = f"_{args.version}" if args.version else ""
+    report_path = output_dir / f"primary_classification_report{version_suffix}.md"
     print(f"\nGenerating report: {report_path}")
     generate_report(metrics, str(report_path))
     
-    results_path = output_dir / "primary_classification_results.json"
+    results_path = output_dir / f"primary_classification_results{version_suffix}.json"
     with open(results_path, "w", encoding="utf-8") as f:
         serializable_results = {}
         for key, test_results in results.items():
@@ -388,7 +439,13 @@ def main():
                 }
                 for r in test_results
             ]
-        json.dump({"results": serializable_results, "metrics": metrics}, f, indent=2, ensure_ascii=False)
+        json.dump({
+            "version": args.version or "default",
+            "samples": args.samples,
+            "json_mode": not args.no_json_mode,
+            "results": serializable_results, 
+            "metrics": metrics
+        }, f, indent=2, ensure_ascii=False)
     
     print(f"\nResults saved to: {results_path}")
     print("Done!")
