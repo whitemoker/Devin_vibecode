@@ -1,34 +1,47 @@
 # 物流状态自动标注系统 (Logistics Status Auto-Labeling System)
 
-企业级LLM自动标注Pipeline，用于物流轨迹状态识别。
+基于多LLM集成的物流轨迹状态自动分类系统。
+
+## 项目概述
+
+本项目使用4个LLM模型 × 3种Prompt策略 = 12个专家组合进行集成标注，实现物流状态的自动分类。
 
 ## 特性
 
-- **多模型投票**: 支持多个LLM模型（OpenAI GPT-4o、Claude等）进行投票，提高标注准确性
-- **检索式Few-shot**: 根据待标注轨迹动态检索最相似的典型案例作为示例
-- **规则校验**: 业务规则兜底，防止明显错误（如出现"Delivered"却标注为运输中）
-- **不确定性标记**: 低置信度或模型分歧的样本自动标记为需人工复核
-- **断点续跑**: 支持大批量数据的checkpoint机制
-- **可审计输出**: 每条标注都包含evidence引用和解释
+- **多模型集成**: 支持GPT-5.2、Grok-4、Claude-Opus-4.5、Gemini-3等模型
+- **多Prompt策略**: rule_based、time_based、evidence_based三种分类视角
+- **集成投票**: 简单多数投票、加权投票、置信度加权投票
+- **生产级错误处理**: 熔断器、增量保存、心跳监控、优雅退出
+- **专家耦合分析**: 识别冗余专家组合，优化模型选择
 
 ## 项目结构
 
 ```
-logistics-labeling/
-├── config.py              # 配置管理
-├── taxonomy_manager.py    # 分类树管理
-├── preprocessor.py        # 数据预处理（清洗、标准化）
-├── few_shot_retriever.py  # Few-shot样例检索
-├── llm_client.py          # LLM API客户端
-├── labeler.py             # 核心标注模块
-├── voting.py              # 投票/共识机制
-├── pipeline.py            # 主Pipeline编排
-├── evaluator.py           # 评估模块
-├── demo.py                # 演示脚本
-├── run_labeling.py        # 批量标注脚本
-├── taxonomy.json          # 分类树定义
-├── sample_cases.json      # 典型案例库
-└── requirements.txt       # 依赖
+Devin_vibecode/
+├── scripts/                    # 核心脚本
+│   ├── robust_batch_labeler.py # 生产级批量标注器
+│   ├── test_primary_classification.py # 一级分类测试
+│   ├── expert_coupling_analysis.py # 专家耦合分析
+│   └── ensemble_voting.py      # 集成投票策略
+├── src/                        # 源代码
+│   ├── ensemble_labeler.py     # 集成标注器
+│   ├── llm_client.py           # LLM客户端
+│   ├── hierarchical_labeler.py # 分层标注器
+│   └── anonymizer.py           # 人名脱敏
+├── resources/
+│   ├── prompts/                # Prompt模板
+│   │   ├── primary_*_v1.yaml   # 一级分类prompt（最新版）
+│   │   └── primary_*_v0.yaml   # 一级分类prompt（旧版）
+│   └── taxonomy/               # 分类树定义
+│       └── taxonomy.json
+├── output/                     # 输出结果
+│   ├── run_ensemble_50_v1/     # 50样本测试结果
+│   ├── expert_coupling_analysis.json
+│   ├── ensemble_voting_results.json
+│   └── hard_cases_analysis.md
+├── goldenset.json              # 测试集（300单号，4082事件）
+├── HANDOVER.md                 # 交接文档
+└── requirements.txt
 ```
 
 ## 安装
@@ -39,141 +52,75 @@ pip install -r requirements.txt
 
 ## 配置API Key
 
-设置环境变量：
-
 ```bash
-# OpenAI
-export OPENAI_API_KEY='your-openai-key'
-
-# Anthropic (可选，用于多模型投票)
-export ANTHROPIC_API_KEY='your-anthropic-key'
+export ABACUS_API_KEY='your-abacus-key'
 ```
+
+## 一级分类（6类）
+
+| 类目 | 说明 |
+|------|------|
+| INFO_RECEIVED | 信息已收到，未实际揽收 |
+| IN_TRANSIT | 运输中（揽收、分拣、清关、航班等） |
+| WAITING_DELIVERY | 待派送（派送中、可自取） |
+| DELIVERED | 已签收 |
+| DELIVERY_FAILED | 派送失败（有明确失败原因） |
+| ABNORMAL | 异常（扣留、丢失、损坏、退回等） |
 
 ## 使用方法
 
-### 1. 运行Demo
+### 运行一级分类测试
 
 ```bash
-# 单模型测试
-python demo.py --mode single
-
-# 多模型投票测试
-python demo.py --mode multi
-
-# 评估演示
-python demo.py --mode eval
+python scripts/test_primary_classification.py \
+  --samples 50 \
+  --models gpt-5.2 grok-4 claude-opus-4.5 gemini-3 \
+  --prompts rule_based time_based evidence_based \
+  --output output/test_run
 ```
 
-### 2. 批量标注
+### 运行专家耦合分析
 
-准备输入数据（JSONL格式）：
-```json
-{"id": "1", "trace": "物流轨迹文本..."}
-{"id": "2", "trace": "物流轨迹文本..."}
-```
-
-运行标注：
 ```bash
-# 单模型标注
-python run_labeling.py --input data.jsonl --model gpt-4o-mini
-
-# 多模型投票标注
-python run_labeling.py --input data.jsonl --model all --voting weighted_majority
-
-# 从checkpoint恢复
-python run_labeling.py --input data.jsonl --checkpoint my_job --resume
-
-# 标注并评估
-python run_labeling.py --input data.jsonl --gold-labels labels.csv
+python scripts/expert_coupling_analysis.py \
+  --input output/run_ensemble_50_v1/predictions_long_merged.jsonl \
+  --output output/expert_coupling_analysis.json
 ```
 
-### 3. 在代码中使用
+### 运行集成投票
 
-```python
-from config import PipelineConfig, ModelConfig
-from pipeline import LabelingPipeline, LabelingTask
-
-# 配置
-config = PipelineConfig(
-    models=[
-        ModelConfig(
-            name="gpt-4o-mini",
-            provider="openai",
-            model_id="gpt-4o-mini",
-            api_key_env="OPENAI_API_KEY",
-            temperature=0.0,
-            weight=1.0
-        ),
-    ],
-    num_few_shot_examples=3,
-    voting_strategy="weighted_majority",
-    min_confidence_threshold=0.6,
-)
-
-# 初始化Pipeline
-pipeline = LabelingPipeline(config, base_dir="/path/to/project")
-
-# 标注单条数据
-task = LabelingTask(id="1", trace="物流轨迹文本...")
-result = pipeline.label_single(task)
-
-print(f"预测: {result.sub_status}")
-print(f"置信度: {result.confidence}")
-print(f"解释: {result.explanation}")
-print(f"需人工复核: {result.needs_human_review}")
+```bash
+python scripts/ensemble_voting.py \
+  --input output/run_ensemble_50_v1/predictions_long_merged.jsonl \
+  --output output/ensemble_voting_results.json
 ```
 
-## 分类树
+## 测试结果
 
-系统支持6个主状态、28个子状态：
+基于50样本 × 4模型 × 3prompt = 600次测试：
 
-| 主状态 | 子状态数 | 说明 |
-|--------|----------|------|
-| In transit/运输途中 | 8 | 包括分拣中心、清关、航空运输等 |
-| Out for delivery/派送中 | 3 | 派送途中、自提点等待、二次派送 |
-| Delivered/签收 | 4 | 正常签收、自提签收、本人签收、门廊签收 |
-| Failed attempt/投递失败 | 4 | 地址问题、不在家、联系不上、其他原因 |
-| Exception/可能异常 | 8 | 无人领取、海关扣留、损坏丢失、退件等 |
-| Info received/等待揽收 | 1 | 等待揽收 |
+| 指标 | 结果 |
+|------|------|
+| 总体准确率 | 78.0% |
+| Oracle准确率 | 94.0% |
+| 简单多数投票 | 90.0% |
+| 加权投票 | 90.0% |
 
-## 输出格式
+**模型准确率排名：**
+1. GPT-5.2: 90.7%
+2. Grok-4: 84.7%
+3. Claude-Opus-4.5: 81.3%
+4. Gemini-3: 55.3% (API不稳定)
 
-每条标注结果包含：
+## API配置
 
-```json
-{
-    "task_id": "1",
-    "trace": "原始轨迹文本",
-    "main_status": "In transit/运输途中",
-    "sub_status": "IN_TRANSIT_03",
-    "confidence": 0.85,
-    "evidence": ["Clearance processing completed - Import"],
-    "explanation": "轨迹中出现清关完成的信息",
-    "needs_human_review": false,
-    "review_reason": "",
-    "voting_details": {...},
-    "predictions": [
-        {"model": "gpt-4o-mini", "sub_status": "IN_TRANSIT_03", "confidence": 0.85}
-    ],
-    "timestamp": "2025-12-30T18:00:00"
-}
-```
+- **API Base URL**: https://routellm.abacus.ai/v1
+- **模型ID**:
+  - grok-4-0709
+  - gpt-5.2
+  - claude-opus-4-5-20251101
+  - gemini-3-pro-preview
 
-## 质量控制
+## 详细文档
 
-1. **规则校验**: 自动检测明显矛盾（如轨迹包含"delivered"但标注为运输中）
-2. **置信度阈值**: 低于阈值的样本标记为需人工复核
-3. **投票分歧**: 多模型投票分歧大的样本标记为需人工复核
-4. **NEEDS_HUMAN标记**: 不确定的样本不强行分类，而是标记出来
-
-## 评估
-
-```python
-from evaluator import Evaluator
-
-evaluator = Evaluator()
-result = evaluator.evaluate(predictions)
-
-print(result.summary)
-# 输出: 准确率、Macro F1、每类P/R/F1、混淆矩阵等
-```
+请参阅 [HANDOVER.md](HANDOVER.md) 获取完整的项目交接文档。
