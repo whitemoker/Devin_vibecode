@@ -1,0 +1,1808 @@
+{
+  "summary": {
+    "simple_majority": {
+      "accuracy": 0.9,
+      "correct": 45,
+      "total": 50
+    },
+    "weighted": {
+      "accuracy": 0.9,
+      "correct": 45,
+      "total": 50
+    },
+    "confidence": {
+      "accuracy": 0.86,
+      "correct": 43,
+      "total": 50
+    },
+    "selective": {
+      "accuracy": 0.88,
+      "correct": 44,
+      "total": 50
+    }
+  },
+  "expert_weights": {
+    "gpt-5.2_rule_based": {
+      "IN_TRANSIT": 0.8181818181818182,
+      "overall": 0.8653846153846154,
+      "ABNORMAL": 0.7,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.9,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.8
+    },
+    "gpt-5.2_time_based": {
+      "IN_TRANSIT": 0.9090909090909091,
+      "overall": 0.9230769230769231,
+      "ABNORMAL": 0.8,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.9,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.9
+    },
+    "gpt-5.2_evidence_based": {
+      "IN_TRANSIT": 0.8181818181818182,
+      "overall": 0.8846153846153846,
+      "ABNORMAL": 0.8,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.8,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.9
+    },
+    "claude-opus-4.5_rule_based": {
+      "IN_TRANSIT": 0.6363636363636364,
+      "overall": 0.8076923076923077,
+      "ABNORMAL": 0.6,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.8,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.9
+    },
+    "claude-opus-4.5_time_based": {
+      "IN_TRANSIT": 0.7272727272727273,
+      "overall": 0.7884615384615384,
+      "ABNORMAL": 0.6,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.8,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.7
+    },
+    "claude-opus-4.5_evidence_based": {
+      "IN_TRANSIT": 0.6363636363636364,
+      "overall": 0.8076923076923077,
+      "ABNORMAL": 0.7,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.8,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.8
+    },
+    "gemini-3_rule_based": {
+      "IN_TRANSIT": 0.8181818181818182,
+      "overall": 0.8541666666666666,
+      "ABNORMAL": 0.75,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.7777777777777778,
+      "WAITING_DELIVERY": 0.6666666666666666,
+      "DELIVERY_FAILED": 0.8
+    },
+    "grok-4_rule_based": {
+      "IN_TRANSIT": 0.6363636363636364,
+      "overall": 0.7884615384615384,
+      "ABNORMAL": 0.8,
+      "INFO_RECEIVED": 0.8181818181818182,
+      "DELIVERED": 0.8,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.7
+    },
+    "gemini-3_time_based": {
+      "IN_TRANSIT": 0.8888888888888888,
+      "overall": 0.8888888888888888,
+      "ABNORMAL": 0.8,
+      "INFO_RECEIVED": 0.8571428571428571,
+      "DELIVERED": 0.8571428571428571,
+      "WAITING_DELIVERY": 0.4,
+      "DELIVERY_FAILED": 0.75
+    },
+    "grok-4_time_based": {
+      "IN_TRANSIT": 0.7272727272727273,
+      "overall": 0.8461538461538461,
+      "ABNORMAL": 0.7,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.8,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.9
+    },
+    "gemini-3_evidence_based": {
+      "IN_TRANSIT": 0.625,
+      "overall": 0.84,
+      "ABNORMAL": 0.8,
+      "INFO_RECEIVED": 0.8333333333333334,
+      "DELIVERED": 0.8571428571428571,
+      "WAITING_DELIVERY": 0.6,
+      "DELIVERY_FAILED": 0.75
+    },
+    "grok-4_evidence_based": {
+      "IN_TRANSIT": 0.7272727272727273,
+      "overall": 0.8823529411764706,
+      "ABNORMAL": 0.8888888888888888,
+      "INFO_RECEIVED": 0.9090909090909091,
+      "DELIVERED": 0.8,
+      "WAITING_DELIVERY": 0.7,
+      "DELIVERY_FAILED": 0.9
+    }
+  },
+  "selected_experts": [
+    "gpt-5.2_time_based",
+    "grok-4_rule_based",
+    "claude-opus-4.5_evidence_based"
+  ],
+  "needs_review": [
+    {
+      "sample_id": "BRTMA5121603310YQ",
+      "true_label": "IN_TRANSIT",
+      "consensus": "split",
+      "predictions": {
+        "gpt-5.2_rule_based": "IN_TRANSIT",
+        "gpt-5.2_time_based": "IN_TRANSIT",
+        "gpt-5.2_evidence_based": "IN_TRANSIT",
+        "claude-opus-4.5_rule_based": "DELIVERED",
+        "claude-opus-4.5_time_based": "DELIVERED",
+        "claude-opus-4.5_evidence_based": "DELIVERED",
+        "gemini-3_rule_based": "IN_TRANSIT",
+        "grok-4_rule_based": "DELIVERED",
+        "gemini-3_time_based": "IN_TRANSIT",
+        "grok-4_time_based": "DELIVERED",
+        "gemini-3_evidence_based": "DELIVERED",
+        "grok-4_evidence_based": "IN_TRANSIT"
+      }
+    },
+    {
+      "sample_id": "YT2533600703063015",
+      "true_label": "IN_TRANSIT",
+      "consensus": "split",
+      "predictions": {
+        "gpt-5.2_rule_based": "IN_TRANSIT",
+        "gpt-5.2_time_based": "IN_TRANSIT",
+        "gpt-5.2_evidence_based": "WAITING_DELIVERY",
+        "claude-opus-4.5_rule_based": "DELIVERED",
+        "claude-opus-4.5_time_based": "IN_TRANSIT",
+        "claude-opus-4.5_evidence_based": "DELIVERED",
+        "gemini-3_rule_based": "DELIVERED",
+        "grok-4_rule_based": "DELIVERED",
+        "gemini-3_time_based": "IN_TRANSIT",
+        "grok-4_time_based": "IN_TRANSIT",
+        "gemini-3_evidence_based": "DELIVERED",
+        "grok-4_evidence_based": "WAITING_DELIVERY"
+      }
+    },
+    {
+      "sample_id": "WS18906629529532898DL",
+      "true_label": "DELIVERED",
+      "consensus": "split",
+      "predictions": {
+        "gpt-5.2_rule_based": "DELIVERED",
+        "gpt-5.2_time_based": "DELIVERED",
+        "gpt-5.2_evidence_based": "ABNORMAL",
+        "claude-opus-4.5_rule_based": "WAITING_DELIVERY",
+        "claude-opus-4.5_time_based": "IN_TRANSIT",
+        "claude-opus-4.5_evidence_based": "WAITING_DELIVERY",
+        "gemini-3_rule_based": "ABNORMAL",
+        "grok-4_rule_based": "ABNORMAL",
+        "gemini-3_time_based": "UNKNOWN",
+        "grok-4_time_based": "ABNORMAL",
+        "gemini-3_evidence_based": "UNKNOWN",
+        "grok-4_evidence_based": "ABNORMAL"
+      }
+    }
+  ],
+  "predictions": {
+    "simple_majority": [
+      {
+        "sample_id": "BRTMA5121603314YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "majority",
+        "votes": 7,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2535100703117471",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "ZHO864OS",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14538095414636300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709476697",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "BRTMA5121603310YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "split",
+        "votes": 6,
+        "is_correct": true
+      },
+      {
+        "sample_id": "4PX3002362137735CN",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 11,
+        "is_correct": true
+      },
+      {
+        "sample_id": "886614185252",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701718088",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UAEGK4D3B",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE3090500143YQ",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 11,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600703063015",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "split",
+        "votes": 5,
+        "is_correct": true
+      },
+      {
+        "sample_id": "SFYD25100157976",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "GM5453527420279432",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 11,
+        "is_correct": false
+      },
+      {
+        "sample_id": "WNBAA0415647526YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9200190406901200053492",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1ZR080J80319161767",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "votes": 8,
+        "is_correct": true
+      },
+      {
+        "sample_id": "AP00785251387279",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700225033",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700470886",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14532782726884605DL",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2533600705681657",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WNBAA0415647959YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UUS5C91261606966536",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 11,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340435060713287449",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100702518984",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKLKF",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 12,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709674333",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 11,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS18906629529532898DL",
+        "true_label": "DELIVERED",
+        "pred_label": "ABNORMAL",
+        "consensus": "split",
+        "votes": 5,
+        "is_correct": false
+      },
+      {
+        "sample_id": "UK729699455YP",
+        "true_label": "ABNORMAL",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "majority",
+        "votes": 8,
+        "is_correct": false
+      },
+      {
+        "sample_id": "4PX3002294130378CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS11034963336510627DL",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "votes": 7,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2537521437384778",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "TYZRB0011817454YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434532298822878",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "votes": 8,
+        "is_correct": true
+      },
+      {
+        "sample_id": "SPXDFW030206760041",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "majority",
+        "votes": 9,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434523209625350",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "H06R4A0047513354",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "votes": 9,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CNUSUP00031898791",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 9,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100703145050",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "votes": 9,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE1211500900YQ",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "887165763317",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600705941549",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "votes": 7,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700425088",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9234690406901200127874",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS17882706103523300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKJ8A",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "votes": 8,
+        "is_correct": true
+      },
+      {
+        "sample_id": "4PX3002241059929CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 9,
+        "is_correct": true
+      },
+      {
+        "sample_id": "LP00736971591941",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 9,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701913242",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 10,
+        "is_correct": true
+      }
+    ],
+    "weighted": [
+      {
+        "sample_id": "BRTMA5121603314YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "split",
+        "weight": 5.786199095022624,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2535100703117471",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "ZHO864OS",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14538095414636300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709476697",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "BRTMA5121603310YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "split",
+        "weight": 5.29848541980895,
+        "is_correct": true
+      },
+      {
+        "sample_id": "4PX3002362137735CN",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "weight": 9.336946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "886614185252",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701718088",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UAEGK4D3B",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE3090500143YQ",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "weight": 9.288058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600703063015",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "split",
+        "weight": 4.311965811965812,
+        "is_correct": true
+      },
+      {
+        "sample_id": "SFYD25100157976",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "GM5453527420279432",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "weight": 9.336946958270488,
+        "is_correct": false
+      },
+      {
+        "sample_id": "WNBAA0415647526YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9200190406901200053492",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1ZR080J80319161767",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "weight": 6.875408496732025,
+        "is_correct": true
+      },
+      {
+        "sample_id": "AP00785251387279",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700225033",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700470886",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14532782726884605DL",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2533600705681657",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WNBAA0415647959YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UUS5C91261606966536",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "weight": 9.288058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340435060713287449",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100702518984",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKLKF",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "weight": 10.176946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709674333",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 9.336946958270488,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS18906629529532898DL",
+        "true_label": "DELIVERED",
+        "pred_label": "ABNORMAL",
+        "consensus": "split",
+        "weight": 4.255750377073906,
+        "is_correct": false
+      },
+      {
+        "sample_id": "UK729699455YP",
+        "true_label": "ABNORMAL",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "majority",
+        "weight": 6.681089743589744,
+        "is_correct": false
+      },
+      {
+        "sample_id": "4PX3002294130378CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS11034963336510627DL",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "weight": 6.0442119155354455,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2537521437384778",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "TYZRB0011817454YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434532298822878",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "weight": 6.747737556561086,
+        "is_correct": true
+      },
+      {
+        "sample_id": "SPXDFW030206760041",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "majority",
+        "weight": 7.65959653092006,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434523209625350",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "H06R4A0047513354",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "weight": 7.65959653092006,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CNUSUP00031898791",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "weight": 7.593891402714931,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100703145050",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "weight": 7.64036576168929,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE1211500900YQ",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "887165763317",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600705941549",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "weight": 6.016968325791854,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700425088",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9234690406901200127874",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS17882706103523300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKJ8A",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "weight": 6.7942119155354455,
+        "is_correct": true
+      },
+      {
+        "sample_id": "4PX3002241059929CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "weight": 7.593891402714931,
+        "is_correct": true
+      },
+      {
+        "sample_id": "LP00736971591941",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "weight": 7.593891402714931,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701913242",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "weight": 8.448058069381599,
+        "is_correct": true
+      }
+    ],
+    "confidence": [
+      {
+        "sample_id": "BRTMA5121603314YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "split",
+        "confidence": 5.9399999999999995,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2535100703117471",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "confidence": 11.629999999999999,
+        "is_correct": true
+      },
+      {
+        "sample_id": "ZHO864OS",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "confidence": 11.600000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14538095414636300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 11.75,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709476697",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 11.75,
+        "is_correct": true
+      },
+      {
+        "sample_id": "BRTMA5121603310YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "split",
+        "confidence": 5.340000000000001,
+        "is_correct": false
+      },
+      {
+        "sample_id": "4PX3002362137735CN",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "confidence": 9.73,
+        "is_correct": true
+      },
+      {
+        "sample_id": "886614185252",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 11.85,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701718088",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "confidence": 11.620000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UAEGK4D3B",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 11.370000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE3090500143YQ",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "confidence": 10.73,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600703063015",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "split",
+        "confidence": 4.699999999999999,
+        "is_correct": false
+      },
+      {
+        "sample_id": "SFYD25100157976",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 11.84,
+        "is_correct": true
+      },
+      {
+        "sample_id": "GM5453527420279432",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "confidence": 10.1,
+        "is_correct": false
+      },
+      {
+        "sample_id": "WNBAA0415647526YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "confidence": 11.620000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9200190406901200053492",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "confidence": 10.98,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1ZR080J80319161767",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "confidence": 7.32,
+        "is_correct": true
+      },
+      {
+        "sample_id": "AP00785251387279",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "confidence": 9.450000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700225033",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 11.719999999999999,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700470886",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "confidence": 11.45,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14532782726884605DL",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 11.5,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2533600705681657",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 11.89,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WNBAA0415647959YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "confidence": 11.57,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UUS5C91261606966536",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "confidence": 10.49,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340435060713287449",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 11.780000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100702518984",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 11.719999999999999,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKLKF",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "confidence": 11.37,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709674333",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 10.719999999999999,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS18906629529532898DL",
+        "true_label": "DELIVERED",
+        "pred_label": "ABNORMAL",
+        "consensus": "split",
+        "confidence": 4.76,
+        "is_correct": false
+      },
+      {
+        "sample_id": "UK729699455YP",
+        "true_label": "ABNORMAL",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "majority",
+        "confidence": 6.11,
+        "is_correct": false
+      },
+      {
+        "sample_id": "4PX3002294130378CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 9.8,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS11034963336510627DL",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "confidence": 6.79,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2537521437384778",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "confidence": 9.45,
+        "is_correct": true
+      },
+      {
+        "sample_id": "TYZRB0011817454YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "confidence": 9.33,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434532298822878",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "confidence": 7.58,
+        "is_correct": true
+      },
+      {
+        "sample_id": "SPXDFW030206760041",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "majority",
+        "confidence": 8.52,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434523209625350",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "confidence": 9.260000000000002,
+        "is_correct": true
+      },
+      {
+        "sample_id": "H06R4A0047513354",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "confidence": 8.49,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CNUSUP00031898791",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "confidence": 8.52,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100703145050",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "confidence": 8.41,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE1211500900YQ",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "confidence": 9.23,
+        "is_correct": true
+      },
+      {
+        "sample_id": "887165763317",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "confidence": 9.620000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600705941549",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "confidence": 6.01,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700425088",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 9.66,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9234690406901200127874",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "confidence": 9.530000000000001,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS17882706103523300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 9.66,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKJ8A",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "confidence": 7.19,
+        "is_correct": true
+      },
+      {
+        "sample_id": "4PX3002241059929CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "confidence": 8.84,
+        "is_correct": true
+      },
+      {
+        "sample_id": "LP00736971591941",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "confidence": 8.66,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701913242",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "confidence": 9.66,
+        "is_correct": true
+      }
+    ],
+    "selective": [
+      {
+        "sample_id": "BRTMA5121603314YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2535100703117471",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "ZHO864OS",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14538095414636300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709476697",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "BRTMA5121603310YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": false
+      },
+      {
+        "sample_id": "4PX3002362137735CN",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "886614185252",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701718088",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UAEGK4D3B",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE3090500143YQ",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600703063015",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "DELIVERED",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": false
+      },
+      {
+        "sample_id": "SFYD25100157976",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "GM5453527420279432",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": false
+      },
+      {
+        "sample_id": "WNBAA0415647526YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9200190406901200053492",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1ZR080J80319161767",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "AP00785251387279",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700225033",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700470886",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS14532782726884605DL",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": false
+      },
+      {
+        "sample_id": "YT2533600705681657",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WNBAA0415647959YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UUS5C91261606966536",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340435060713287449",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100702518984",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKLKF",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800709674333",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS18906629529532898DL",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "split",
+        "votes": 1,
+        "is_correct": true
+      },
+      {
+        "sample_id": "UK729699455YP",
+        "true_label": "ABNORMAL",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": false
+      },
+      {
+        "sample_id": "4PX3002294130378CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS11034963336510627DL",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2537521437384778",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "TYZRB0011817454YQ",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434532298822878",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "SPXDFW030206760041",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": true
+      },
+      {
+        "sample_id": "00340434523209625350",
+        "true_label": "IN_TRANSIT",
+        "pred_label": "IN_TRANSIT",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "H06R4A0047513354",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CNUSUP00031898791",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2535100703145050",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": true
+      },
+      {
+        "sample_id": "CJPHE1211500900YQ",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "887165763317",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2533600705941549",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2534400700425088",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "9234690406901200127874",
+        "true_label": "WAITING_DELIVERY",
+        "pred_label": "WAITING_DELIVERY",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "WS17882706103523300DL",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "1LSD3L8000LKJ8A",
+        "true_label": "DELIVERY_FAILED",
+        "pred_label": "DELIVERY_FAILED",
+        "consensus": "majority",
+        "votes": 2,
+        "is_correct": true
+      },
+      {
+        "sample_id": "4PX3002241059929CN",
+        "true_label": "DELIVERED",
+        "pred_label": "DELIVERED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "LP00736971591941",
+        "true_label": "ABNORMAL",
+        "pred_label": "ABNORMAL",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      },
+      {
+        "sample_id": "YT2532800701913242",
+        "true_label": "INFO_RECEIVED",
+        "pred_label": "INFO_RECEIVED",
+        "consensus": "unanimous",
+        "votes": 3,
+        "is_correct": true
+      }
+    ]
+  }
+}
