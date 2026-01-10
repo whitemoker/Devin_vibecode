@@ -1,0 +1,30 @@
+{
+  "run_id": "ensemble_50_v1",
+  "timestamp": "2026-01-10T08:56:55.038228",
+  "test_set_path": "output/test_samples_50.json",
+  "total_samples": 50,
+  "prompt_version": "v1",
+  "max_events": 20,
+  "json_mode": true,
+  "seed": 42,
+  "workers": 4,
+  "models": [
+    "grok-4",
+    "gpt-5.2",
+    "claude-opus-4.5",
+    "gemini-3"
+  ],
+  "prompts": [
+    "rule_based",
+    "time_based",
+    "evidence_based"
+  ],
+  "category_distribution": {
+    "IN_TRANSIT": 9,
+    "ABNORMAL": 8,
+    "INFO_RECEIVED": 9,
+    "DELIVERED": 8,
+    "WAITING_DELIVERY": 8,
+    "DELIVERY_FAILED": 8
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "total": 600,
+  "successful": 543,
+  "unknown": 57,
+  "correct": 468,
+  "accuracy": 0.78,
+  "by_model": {
+    "grok-4": {
+      "total": 150,
+      "correct": 127,
+      "unknown": 1,
+      "accuracy": 0.8466666666666667
+    },
+    "gpt-5.2": {
+      "total": 150,
+      "correct": 136,
+      "unknown": 0,
+      "accuracy": 0.9066666666666666
+    },
+    "claude-opus-4.5": {
+      "total": 150,
+      "correct": 122,
+      "unknown": 0,
+      "accuracy": 0.8133333333333334
+    },
+    "gemini-3": {
+      "total": 150,
+      "correct": 83,
+      "unknown": 56,
+      "accuracy": 0.5533333333333333
+    }
+  },
+  "by_prompt": {
+    "rule_based": {
+      "total": 200,
+      "correct": 165,
+      "unknown": 4,
+      "accuracy": 0.825
+    },
+    "time_based": {
+      "total": 200,
+      "correct": 153,
+      "unknown": 25,
+      "accuracy": 0.765
+    },
+    "evidence_based": {
+      "total": 200,
+      "correct": 150,
+      "unknown": 28,
+      "accuracy": 0.75
+    }
+  },
+  "by_expert": {
+    "gpt-5.2_rule_based": {
+      "total": 50,
+      "correct": 44,
+      "unknown": 0,
+      "accuracy": 0.88
+    },
+    "gpt-5.2_time_based": {
+      "total": 50,
+      "correct": 47,
+      "unknown": 0,
+      "accuracy": 0.94
+    },
+    "gpt-5.2_evidence_based": {
+      "total": 50,
+      "correct": 45,
+      "unknown": 0,
+      "accuracy": 0.9
+    },
+    "claude-opus-4.5_rule_based": {
+      "total": 50,
+      "correct": 41,
+      "unknown": 0,
+      "accuracy": 0.82
+    },
+    "claude-opus-4.5_time_based": {
+      "total": 50,
+      "correct": 40,
+      "unknown": 0,
+      "accuracy": 0.8
+    },
+    "claude-opus-4.5_evidence_based": {
+      "total": 50,
+      "correct": 41,
+      "unknown": 0,
+      "accuracy": 0.82
+    },
+    "gemini-3_rule_based": {
+      "total": 50,
+      "correct": 40,
+      "unknown": 4,
+      "accuracy": 0.8
+    },
+    "grok-4_rule_based": {
+      "total": 50,
+      "correct": 40,
+      "unknown": 0,
+      "accuracy": 0.8
+    },
+    "gemini-3_time_based": {
+      "total": 50,
+      "correct": 23,
+      "unknown": 25,
+      "accuracy": 0.46
+    },
+    "grok-4_time_based": {
+      "total": 50,
+      "correct": 43,
+      "unknown": 0,
+      "accuracy": 0.86
+    },
+    "gemini-3_evidence_based": {
+      "total": 50,
+      "correct": 20,
+      "unknown": 27,
+      "accuracy": 0.4
+    },
+    "grok-4_evidence_based": {
+      "total": 50,
+      "correct": 44,
+      "unknown": 1,
+      "accuracy": 0.88
+    }
+  }
+}
