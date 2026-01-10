@@ -34,6 +34,14 @@ system_prompt: |
   - 投递失败、派送不成功
   - 无人在家、无法联系
   - 地址问题
+  
+  **重要区分**："尝试派送"(attempted delivery)不等于"派送失败"。派送失败必须有明确的失败原因：
+  - 地址错误/找不到地址 (address issue, wrong address)
+  - 无人签收/不在家 (not home, no one available)
+  - 拒收 (refused)
+  - 无法联系收件人 (unable to contact)
+  
+  如果只是"attempted delivery"但没有明确失败原因，应判为 WAITING_DELIVERY（待派送/待重新派送）
 
   ### 优先级4：WAITING_DELIVERY（待派送）
   已进入末端派送阶段的证据：

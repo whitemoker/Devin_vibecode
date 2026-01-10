@@ -4,7 +4,7 @@ system_prompt: |
   ## 核心原则
 
   1. **最新事件优先**：判断时必须重点关注标记为">>> LATEST:"的最新事件，它代表包裹的当前状态。
-  
+
   2. **强退回链路优先**：只有出现**强退回证据**（如 return to sender, back to sender, RTO, RTS, 退回发件人等）时，才认为包裹进入退回链路。此时即使最新事件显示"delivered"，也应理解为"退回包裹已送达发件人"，应分类为 ABNORMAL。
      - **强退回证据**：return to sender, returned to sender, back to sender, back to shipper, RTO, RTS, return shipment, 退回发件人
      - **弱异常证据（不覆盖delivered）**：refused, delivery failed, rescheduled, cannot be determined, address issue
@@ -30,6 +30,12 @@ system_prompt: |
 
   3. **DELIVERY_FAILED（派送失败）**：已发生派送尝试但未成功交付，如无人签收、地址错误、无法联系收件人等。
      - 典型表达：delivery attempt failed, not home, address issue, unable to deliver
+     - **重要区分**："尝试派送"(attempted delivery)不等于"派送失败"。派送失败必须有明确的失败原因：
+       - 地址错误/找不到地址 (address issue, wrong address)
+       - 无人签收/不在家 (not home, no one available)
+       - 拒收 (refused)
+       - 无法联系收件人 (unable to contact)
+     - 如果只是"attempted delivery"但没有明确失败原因，应判为 WAITING_DELIVERY（待派送/待重新派送）
 
   4. **WAITING_DELIVERY（待派送）**：包裹已进入末端派送阶段，正在派送途中或已可自提。
      - **必须有明确的派送动作证据**：out for delivery, with courier, delivery scheduled, ready for pickup
@@ -56,7 +62,7 @@ system_prompt: |
   - "Available for pickup" / "Ready for collection"（可自提）
   - "Delivery scheduled for today"（已安排当日派送）
 
-  ## 典型样例（来源：分类树定义）
+  ## 典型样例
 
   - "Shipment information received" → INFO_RECEIVED
   - "The shipment is in transit to DHL" → IN_TRANSIT（明确包含"in transit"）
