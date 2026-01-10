@@ -395,6 +395,24 @@ def generate_report(metrics: Dict[str, Dict], output_path: str):
     return report
 
 
+def save_test_samples(samples: List[Dict], output_path: str):
+    """Save test samples to a JSON file for reproducibility."""
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "description": "Fixed test samples for primary classification evaluation",
+            "total_samples": len(samples),
+            "samples": samples
+        }, f, indent=2, ensure_ascii=False)
+    print(f"Test samples saved to: {output_path}")
+
+
+def load_test_samples(input_path: str) -> List[Dict]:
+    """Load test samples from a JSON file."""
+    with open(input_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data["samples"]
+
+
 def main():
     parser = argparse.ArgumentParser(description="Test primary classification with multiple LLMs and prompts")
     parser.add_argument("--version", "-v", default="", help="Prompt version (e.g., v0, v1). Empty for default prompts.")
@@ -404,6 +422,8 @@ def main():
     parser.add_argument("--seed", type=int, default=42, help="Random seed for sampling (default: 42)")
     parser.add_argument("--models", "-m", default="", help="Comma-separated list of models to test (e.g., 'gemini-3,gpt-5.2'). Empty for all models.")
     parser.add_argument("--prompts", "-p", default="", help="Comma-separated list of prompts to test (e.g., 'time_based,rule_based'). Empty for all prompts.")
+    parser.add_argument("--test-set", "-t", default="", help="Path to fixed test samples JSON file. If not provided, samples from goldenset.")
+    parser.add_argument("--save-samples", "-s", default="", help="Save sampled data to this path (for creating fixed test sets).")
     args = parser.parse_args()
     
     random.seed(args.seed)
@@ -414,12 +434,22 @@ def main():
     output_dir = project_root / "output"
     output_dir.mkdir(exist_ok=True)
     
-    print("Loading goldenset...")
-    goldenset = load_goldenset(str(goldenset_path))
-    
-    print(f"Sampling {args.samples} balanced records...")
-    samples = sample_balanced(goldenset, args.samples)
-    print(f"Sampled {len(samples)} records")
+    # Load samples from fixed test set or sample from goldenset
+    if args.test_set:
+        print(f"Loading fixed test samples from: {args.test_set}")
+        samples = load_test_samples(args.test_set)
+        print(f"Loaded {len(samples)} samples")
+    else:
+        print("Loading goldenset...")
+        goldenset = load_goldenset(str(goldenset_path))
+        
+        print(f"Sampling {args.samples} balanced records...")
+        samples = sample_balanced(goldenset, args.samples)
+        print(f"Sampled {len(samples)} records")
+        
+        # Save samples if requested
+        if args.save_samples:
+            save_test_samples(samples, args.save_samples)
     
     category_counts = defaultdict(int)
     for s in samples:
