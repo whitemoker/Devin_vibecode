@@ -409,7 +409,7 @@ def main():
     random.seed(args.seed)
     
     project_root = Path(__file__).parent.parent
-    goldenset_path = project_root / "goldenset"
+    goldenset_path = project_root / "goldenset.json"
     prompts_dir = project_root / "resources" / "prompts"
     output_dir = project_root / "output"
     output_dir.mkdir(exist_ok=True)
