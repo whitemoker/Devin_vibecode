@@ -177,18 +177,37 @@ def run_tests(
     output_dir: str,
     prompt_version: str = "",
     use_json_mode: bool = True,
-    max_workers: int = 4
+    max_workers: int = 4,
+    model_filter: List[str] = None,
+    prompt_filter: List[str] = None
 ) -> Dict[str, List[TestResult]]:
     
     client = OpenAI(api_key=ABACUS_API_KEY, base_url=ABACUS_BASE_URL)
     
+    # Filter models if specified
+    models_to_test = MODELS
+    if model_filter:
+        models_to_test = {k: v for k, v in MODELS.items() if k in model_filter}
+        if not models_to_test:
+            print(f"Warning: No valid models found in filter {model_filter}. Using all models.")
+            models_to_test = MODELS
+    
     # Support versioned prompts (e.g., v0, v1)
     suffix = f"_{prompt_version}" if prompt_version else ""
-    prompt_files = {
+    all_prompt_files = {
         "rule_based": f"primary_rule_based{suffix}.yaml",
         "time_based": f"primary_time_based{suffix}.yaml",
         "evidence_based": f"primary_evidence_based{suffix}.yaml"
     }
+    
+    # Filter prompts if specified
+    if prompt_filter:
+        prompt_files = {k: v for k, v in all_prompt_files.items() if k in prompt_filter}
+        if not prompt_files:
+            print(f"Warning: No valid prompts found in filter {prompt_filter}. Using all prompts.")
+            prompt_files = all_prompt_files
+    else:
+        prompt_files = all_prompt_files
     
     prompts = {}
     for name, filename in prompt_files.items():
@@ -200,10 +219,12 @@ def run_tests(
     
     results = defaultdict(list)
     results_lock = threading.Lock()
-    total_tests = len(samples) * len(MODELS) * len(prompts)
+    total_tests = len(samples) * len(models_to_test) * len(prompts)
     completed = [0]
     
-    print(f"Running {total_tests} tests ({len(samples)} samples x {len(MODELS)} models x {len(prompts)} prompts)")
+    print(f"Running {total_tests} tests ({len(samples)} samples x {len(models_to_test)} models x {len(prompts)} prompts)")
+    print(f"Models: {list(models_to_test.keys())}")
+    print(f"Prompts: {list(prompts.keys())}")
     print(f"Using JSON mode: {use_json_mode}, Concurrent workers: {max_workers}")
     print(f"Prompt version: {prompt_version or 'default'}")
     print("-" * 80)
@@ -242,7 +263,7 @@ def run_tests(
     # Build list of all test tasks
     tasks = []
     for sample in samples:
-        for model_name, model_id in MODELS.items():
+        for model_name, model_id in models_to_test.items():
             for prompt_name, prompt_data in prompts.items():
                 tasks.append((sample, model_name, model_id, prompt_name, prompt_data))
     
@@ -381,6 +402,8 @@ def main():
     parser.add_argument("--workers", "-w", type=int, default=4, help="Number of concurrent workers (default: 4)")
     parser.add_argument("--no-json-mode", action="store_true", help="Disable JSON mode for API calls")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for sampling (default: 42)")
+    parser.add_argument("--models", "-m", default="", help="Comma-separated list of models to test (e.g., 'gemini-3,gpt-5.2'). Empty for all models.")
+    parser.add_argument("--prompts", "-p", default="", help="Comma-separated list of prompts to test (e.g., 'time_based,rule_based'). Empty for all prompts.")
     args = parser.parse_args()
     
     random.seed(args.seed)
@@ -403,6 +426,10 @@ def main():
         category_counts[s["true_label"]] += 1
     print(f"Distribution: {dict(category_counts)}")
     
+    # Parse model and prompt filters
+    model_filter = [m.strip() for m in args.models.split(",") if m.strip()] if args.models else None
+    prompt_filter = [p.strip() for p in args.prompts.split(",") if p.strip()] if args.prompts else None
+    
     print("\nRunning tests...")
     results = run_tests(
         samples, 
@@ -410,7 +437,9 @@ def main():
         str(output_dir),
         prompt_version=args.version,
         use_json_mode=not args.no_json_mode,
-        max_workers=args.workers
+        max_workers=args.workers,
+        model_filter=model_filter,
+        prompt_filter=prompt_filter
     )
     
     print("\nCalculating metrics...")

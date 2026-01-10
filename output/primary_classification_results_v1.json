@@ -1,0 +1,1078 @@
+{
+  "version": "v1",
+  "samples": 100,
+  "json_mode": true,
+  "results": {
+    "gemini-3_time_based": [
+      {
+        "tracking_no": "886568735880",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered, Left at front door', indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5089.870452880859
+      },
+      {
+        "tracking_no": "06086379821927",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking events explicitly state 'Delivered' multiple times, indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5153.155088424683
+      },
+      {
+        "tracking_no": "YT2532800709280941",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5450.920104980469
+      },
+      {
+        "tracking_no": "YT2532800701913242",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The trajectory contains only one event 'Shipment information received', which indicates that the carrier has received the shipping request or label creation data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5509.0491771698
+      },
+      {
+        "tracking_no": "WNBAA0404492652YQ",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event explicitly states 'Returned, This parcel is currently being processed to be returned to the retailer', indicating the delivery process has been terminated and the package is being sent back to the sender.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4914.912462234497
+      },
+      {
+        "tracking_no": "UDS1334870781",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.9,
+        "explanation": "The latest status 'Redelivery-Carrier Delay' indicates that a delivery attempt was likely made or planned but failed due to a carrier delay, and a redelivery is now scheduled. This fits the definition of a failed delivery attempt requiring a new attempt.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4897.378206253052
+      },
+      {
+        "tracking_no": "9200190406901200056257",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event 'Delivery Attempted - No Access to Delivery Location' clearly indicates that a delivery attempt was made but failed due to access issues. This fits the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4730.663061141968
+      },
+      {
+        "tracking_no": "DYJCN1023918806CN",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.85,
+        "explanation": "The latest event 'warehouse and scanning is complete' following 'Arrive at the delivery point' indicates the package has reached the final local facility and has been processed for the final leg. While it doesn't explicitly say 'out for delivery', the completion of scanning at the delivery point strongly suggests it is ready for the final mile or pickup, fitting the WAITING_DELIVERY definition better than IN_TRANSIT.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5313.225507736206
+      },
+      {
+        "tracking_no": "WS14538095414636300DL",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the package has not yet been physically picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4434.937477111816
+      },
+      {
+        "tracking_no": "YT2535100702720184",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4785.163640975952
+      },
+      {
+        "tracking_no": "9200190406901200062364",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.98,
+        "explanation": "The latest tracking event 'Delivery Attempted - No Access to Delivery Location' clearly indicates that a delivery attempt was made but failed due to accessibility issues. This falls directly under the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5417.560577392578
+      },
+      {
+        "tracking_no": "YT2532800709674234",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4717.375755310059
+      },
+      {
+        "tracking_no": "9234690406901200127874",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.99,
+        "explanation": "The latest event 'Out for Delivery' explicitly indicates that the package has left the local facility and is currently with the courier for final delivery to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4394.219398498535
+      },
+      {
+        "tracking_no": "886568797341",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered', indicating the package has been successfully handed over to the recipient. Although there was a weather delay earlier in the history, the final status confirms successful delivery.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4847.449779510498
+      },
+      {
+        "tracking_no": "0082800082809763854486",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest status updates indicate 'INCIDENCIA' and 'Incidencia en el reparto' (Incident in delivery), which occurred after the package was available for pickup ('Disponible en Punto Collectt Express'). This suggests a failed delivery attempt or an issue preventing final handover.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4636.543750762939
+      },
+      {
+        "tracking_no": "TYZRB0011830477YQ",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Parcel accepted by Evri gateway' indicates the parcel has arrived at the destination country's carrier network (Evri) after international export. It is currently moving through the network but has not yet started the final mile delivery process.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5102.3125648498535
+      },
+      {
+        "tracking_no": "00340434523209625367",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.9,
+        "explanation": "The latest event 'The shipment is in transit to DHL' indicates that the package has been handed over or is moving towards the carrier's network, moving beyond the initial 'INFO_RECEIVED' stage but not yet reaching the final delivery phase.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4590.089797973633
+      },
+      {
+        "tracking_no": "YT2534400700425088",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking events ('Shipment information received' and 'We're expecting your parcel') indicate that the carrier has received the shipping data but has not yet physically scanned or collected the package.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4578.174114227295
+      },
+      {
+        "tracking_no": "WS14532782726884605DL",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event '[2025-12-10 23:40:31] This parcel has been Arrived at the customers letterbox' indicates that the parcel has been successfully deposited in the recipient's mailbox, which constitutes a completed delivery.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5097.6011753082275
+      },
+      {
+        "tracking_no": "1LSD3L8000LKJ8A",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The package has attempted delivery multiple times (Dec 21, 22, 23) and each time resulted in a status requiring 'additional information to complete your delivery' to avoid a return. This repeated failure with a specific request for customer intervention indicates an exception/abnormal state rather than a simple delivery failure.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4676.061630249023
+      },
+      {
+        "tracking_no": "YT2533600705482973",
+        "true_label": "DELIVERED",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest tracking events repeatedly show 'Hold for Instructions Requested' over a span of several days (Dec 13 to Dec 21), indicating the package is held up and requires intervention or instructions to proceed. This is a clear interruption of the normal delivery flow.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5127.365350723267
+      },
+      {
+        "tracking_no": "LZ336101110CN",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event explicitly states '已试投/投递失败' (Attempted delivery/Delivery failed), indicating that a delivery attempt was made but was unsuccessful.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4495.368719100952
+      },
+      {
+        "tracking_no": "4PX3002241059905CN",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event 'Delivered to letterbox' clearly indicates that the package has been successfully delivered to the recipient's mailbox.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4808.051824569702
+      },
+      {
+        "tracking_no": "BRTMA5121603310YQ",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.85,
+        "explanation": "The latest status 'Shipment operation completed' is ambiguous but typically refers to a processing step within a facility (like sorting or customs) rather than final delivery. Combined with the previous step 'Arrive at The Job Center', the package is moving through the logistics network but has not yet started final delivery.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5078.144311904907
+      },
+      {
+        "tracking_no": "YT2532800709476705",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4938.283443450928
+      },
+      {
+        "tracking_no": "BRTMA5121603309YQ",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.85,
+        "explanation": "The latest status 'Shipment operation completed' is ambiguous but typically refers to a processing step (like sorting or customs) being finished within the transit network, rather than final delivery. The previous step was arrival at a job center. There is no explicit 'Out for Delivery' or 'Delivered' scan.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5437.5293254852295
+      },
+      {
+        "tracking_no": "GM5453527420279371",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.95,
+        "explanation": "The latest status 'ARRIVED AT PICKUP POINT' indicates the package is ready for collection by the recipient. This follows a failed delivery attempt ('NO ONE HOME'), meaning the package is now in the final stage waiting for the customer to pick it up, which fits the definition of WAITING_DELIVERY.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5227.278470993042
+      },
+      {
+        "tracking_no": "WNBAA0415647959YQ",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "UNKNOWN",
+        "confidence": 0.0,
+        "explanation": "Failed to parse",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 6946.83575630188
+      },
+      {
+        "tracking_no": "YT2532800709674333",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The tracking event 'Shipment information received' indicates that the carrier has received the shipping details or the label has been created, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4382.800579071045
+      },
+      {
+        "tracking_no": "9200190406901200053492",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event is 'Out for Delivery', which explicitly indicates that the package is in the final stage of delivery to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5100.8782386779785
+      },
+      {
+        "tracking_no": "9361289684057554423768",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered, In/At Mailbox', indicating the package has been successfully handed over to the recipient or placed in their mailbox.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4715.43025970459
+      },
+      {
+        "tracking_no": "3230002468886394",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest status 'DEVUELTO' (Returned) indicates the package is being returned because the required payment was not made ('no haberse hecho efectivo el importe solicitado'). This is a clear abnormal termination of the delivery process.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5010.809421539307
+      },
+      {
+        "tracking_no": "YT2533600703261957",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.85,
+        "explanation": "The latest event 'Completed Unloading at Delivery Location' indicates the package has arrived at the final facility responsible for delivery and has been unloaded from the truck. While it hasn't explicitly stated 'Out for Delivery', this step immediately precedes the final mile delivery or pickup availability, placing it in the WAITING_DELIVERY phase rather than general transit.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5054.390668869019
+      },
+      {
+        "tracking_no": "YT2533600705662798",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered', indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4233.493328094482
+      },
+      {
+        "tracking_no": "GM5453527420279364",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.95,
+        "explanation": "The latest events indicate that a delivery attempt failed because no one was home ('NO ONE HOME, CARD LEFT'), and the package has subsequently arrived at a pickup point ('ARRIVED AT PICKUP POINT'). This means the package is currently waiting for the recipient to collect it, which falls under the definition of WAITING_DELIVERY (ready for pickup).",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4655.3590297698975
+      },
+      {
+        "tracking_no": "GFUS01022070499136",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered, Left with Individual', indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4733.155727386475
+      },
+      {
+        "tracking_no": "9361289737057547182093",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered, In/At Mailbox', indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4382.758140563965
+      },
+      {
+        "tracking_no": "1ZR080J80319161767",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Voided Information Received' indicates that the shipment label or request has been cancelled/voided by the shipper before the package was even handed over to the carrier. This is a terminal abnormal state where the shipment process has been stopped.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5095.869302749634
+      },
+      {
+        "tracking_no": "YT2533600705941549",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest tracking events indicate a 'Possible delay, incomplete address' and 'Address query' after an 'Out for delivery' attempt. This signifies an exception that has interrupted the delivery process due to address issues, fitting the definition of an abnormal status requiring resolution.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4601.6528606414795
+      },
+      {
+        "tracking_no": "9200190406901200054697",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.99,
+        "explanation": "The latest tracking event is 'Out for Delivery', which clearly indicates that the package has entered the final delivery stage and is currently with the courier for delivery.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4852.349758148193
+      },
+      {
+        "tracking_no": "YT2533600703063015",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.85,
+        "explanation": "The latest event 'Completed Unloading at Delivery Location' indicates the package has arrived at the final facility responsible for delivery (the 'Delivery Location'). While it hasn't explicitly stated 'Out for Delivery' yet, unloading at the delivery location is the step immediately preceding the final mile delivery or pickup availability, placing it in the WAITING_DELIVERY phase rather than general transit.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5286.0517501831055
+      },
+      {
+        "tracking_no": "1ZX612J20208193716",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest status 'Voided Information Received' indicates that the shipment label or request has been cancelled/voided by the shipper before the package was even handed over to the carrier. This is a terminal abnormal state where the shipment process has been stopped.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5104.745388031006
+      },
+      {
+        "tracking_no": "9200190389254600664107",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 1.0,
+        "explanation": "The package was initially delivered on Nov 26, but was subsequently refused by the recipient on Nov 28/29. The latest status shows it has been returned and delivered back to the original sender. Since the intended delivery failed and resulted in a return, this is classified as an abnormal/return scenario.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4664.185285568237
+      },
+      {
+        "tracking_no": "9234690406901200128857",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event 'Delivery Attempted - No Access to Delivery Location' clearly indicates that a delivery attempt was made but failed due to accessibility issues. This falls directly under the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5127.09641456604
+      },
+      {
+        "tracking_no": "VR815820397YP",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.98,
+        "explanation": "The latest event is 'OUT FOR DELIVERY', which clearly indicates that the package has entered the final delivery stage and is on its way to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4614.272594451904
+      },
+      {
+        "tracking_no": "1ZX46W806891214871",
+        "true_label": "ABNORMAL",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'DELIVERED' at 15:53:48 on 2025-12-09, indicating the package has been successfully handed over to the recipient. Although there were previous failed attempts and a refusal, the final status is a successful delivery.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4863.692760467529
+      },
+      {
+        "tracking_no": "YT2533600705591393",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event clearly states 'Delivered, In/At Mailbox', indicating the package has been successfully delivered to the recipient's mailbox.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4684.945106506348
+      },
+      {
+        "tracking_no": "496724257659001",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event is 'ATTEMPTED DELIVERY', which indicates that a delivery attempt was made but was unsuccessful. This directly matches the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5183.261871337891
+      },
+      {
+        "tracking_no": "YT2532800709476697",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5001.983880996704
+      },
+      {
+        "tracking_no": "YT2532800709086967",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4935.100078582764
+      },
+      {
+        "tracking_no": "OX965593086GB",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.98,
+        "explanation": "The latest event 'Out for Delivery' clearly indicates that the package has entered the final delivery stage and is currently with the courier for delivery.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5133.994579315186
+      },
+      {
+        "tracking_no": "CF168817475AU",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest status 'Unsuccessful delivery - Awaiting payment' indicates that the delivery attempt failed specifically due to unpaid fees (likely customs duties or COD). This is an exception that halts the normal delivery process until the issue is resolved, fitting the definition of an ABNORMAL status rather than a simple delivery failure.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5546.07629776001
+      },
+      {
+        "tracking_no": "46597710000851",
+        "true_label": "ABNORMAL",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Shipment left for next facility' indicates the package is moving between facilities. Although there were previous weather delays, the package has resumed movement and is currently in the transportation network, not yet out for final delivery.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4960.753679275513
+      },
+      {
+        "tracking_no": "VR816048864YP",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered' at the recipient's front door, indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4616.339683532715
+      },
+      {
+        "tracking_no": "00340434727194467401",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'The shipment has been successfully delivered', indicating the package has reached its final destination and the delivery process is complete.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4588.9739990234375
+      },
+      {
+        "tracking_no": "DYJCN1023900743CN",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.85,
+        "explanation": "The latest event 'Arrive at the delivery point' indicates the package has reached the final local facility responsible for delivery. While it doesn't explicitly say 'Out for Delivery', arriving at the specific 'delivery point' (as opposed to a general sorting hub) usually signals the start of the final mile process or readiness for pickup/dispatch.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5220.905780792236
+      },
+      {
+        "tracking_no": "CMDC0001980210",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.98,
+        "explanation": "The latest tracking event 'Marked RTO: ORDER_REJECT' indicates that the package has been marked for Return To Origin (RTO) due to the order being rejected, following multiple failed delivery attempts. This is a clear abnormal status involving a return process.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4792.879343032837
+      },
+      {
+        "tracking_no": "887165763317",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.99,
+        "explanation": "The latest event 'On FedEx vehicle for delivery' clearly indicates that the package is in the final delivery stage, which corresponds to the WAITING_DELIVERY status.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4579.135894775391
+      },
+      {
+        "tracking_no": "520232688926",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "Although the latest event mentions 'Available for pickup', the critical event just prior is 'Shipment unclaimed - to be returned to sender' and 'Picked up by Purolator' (likely the return process starting). The package was previously marked 'Delivered' (likely to a pickup point) but was not claimed in time, triggering a return process. Therefore, the status is abnormal (Return to Sender).",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5029.647588729858
+      },
+      {
+        "tracking_no": "GV25CAA0U057430799",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.99,
+        "explanation": "The latest tracking event is 'Out for delivery', which clearly indicates that the parcel is in the final stage of delivery to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5560.65034866333
+      },
+      {
+        "tracking_no": "WS13868496642260947DL",
+        "true_label": "ABNORMAL",
+        "predicted_label": "DELIVERED",
+        "confidence": 0.95,
+        "explanation": "The latest event '[UK] has been successfully submitted' (often translated from '妥投' or similar terms in cross-border logistics) indicates a successful final delivery or handover to the recipient. The preceding steps show the package arriving at the destination country and passing through processing centers, culminating in this final submission event.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5230.795383453369
+      },
+      {
+        "tracking_no": "YT2532800709086983",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4853.671073913574
+      },
+      {
+        "tracking_no": "886615526684",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 1.0,
+        "explanation": "The latest event indicates that the shipment has been cancelled by the sender ('Shipment cancelled by sender'). This is a definitive abnormal termination of the shipping process.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4625.918388366699
+      },
+      {
+        "tracking_no": "YT2535100701548966",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event indicates that the international flight has departed ('International flight has departed'). This confirms the package is currently moving through the cross-border transportation phase and has not yet reached the destination country or the final delivery stage.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5121.565103530884
+      },
+      {
+        "tracking_no": "YT2532800702316221",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking events indicate that shipment information has been received and the carrier is expecting the parcel, but no physical scan or pickup has occurred yet.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4416.633129119873
+      },
+      {
+        "tracking_no": "YT2534400700225033",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4749.1295337677
+      },
+      {
+        "tracking_no": "1Z06AV850492123521",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest tracking events clearly indicate that the receiver has refused the delivery ('The receiver refused the delivery', 'The receiver does not want the product'). A refusal stops the normal delivery process and requires instructions from the sender, classifying this as an abnormal exception rather than a simple delivery failure.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5096.031665802002
+      },
+      {
+        "tracking_no": "DYJCN1023956328CN",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event 'Shipment information received' indicates that the carrier has received the shipping details or label creation request, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 7868.9258098602295
+      },
+      {
+        "tracking_no": "GFUS01022071618880",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered, Door/Yard', indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5423.2518672943115
+      },
+      {
+        "tracking_no": "SF6047062737514",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Failed to deliver the shipment due to incomplete receiver's address', which indicates an unsuccessful delivery attempt.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5092.805624008179
+      },
+      {
+        "tracking_no": "AP00785251387279",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event is 'Out for delivery', which clearly indicates that the package has entered the final delivery stage and is currently being transported to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4360.207319259644
+      },
+      {
+        "tracking_no": "YT2535100702194828",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.98,
+        "explanation": "The latest event indicates the package has arrived at the origin international airport, which is a standard step in the cross-border transportation process. It has not yet reached the destination country or the final delivery stage.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4699.820041656494
+      },
+      {
+        "tracking_no": "YT2533600705193042",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered, Door/Yard', indicating the package has been successfully dropped off at the recipient's location.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4668.4160232543945
+      },
+      {
+        "tracking_no": "1Z0V148YYW33007489",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 1.0,
+        "explanation": "The latest tracking events clearly indicate that the package was damaged ('The package has been damaged'), a claim has been issued, and the receiver refused the package, leading to a return process. This fits the definition of an abnormal status involving damage and return.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5391.044139862061
+      },
+      {
+        "tracking_no": "UK697156251YP",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event explicitly states 'Delivery attempt unsuccessful' and mentions a delay due to local restrictions. This indicates that a final delivery attempt was made but failed to complete.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5081.8164348602295
+      },
+      {
+        "tracking_no": "5508871852",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest tracking events explicitly state 'Delivery attempt could not be completed' and 'Delivery attempted but no response at Consignee address', indicating a failed delivery attempt.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5193.718433380127
+      },
+      {
+        "tracking_no": "63384868556",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Returned to Office' follows an 'Unsuccessful Delivery' attempt due to the recipient not answering the phone. This indicates a failed delivery attempt where the package has been brought back to the carrier's facility, fitting the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4997.442960739136
+      },
+      {
+        "tracking_no": "CJPHE1211500900YQ",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Unsuccessful Delivery Routed to office' clearly indicates that a delivery attempt was made but failed, and the package has been sent to a local office/station.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5316.659688949585
+      },
+      {
+        "tracking_no": "00340434756674295593",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.95,
+        "explanation": "The latest event 'The shipment is in transit to DHL' indicates that the package has moved beyond the initial information received stage and is physically moving towards the carrier's facility, placing it in the transportation network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4499.824285507202
+      },
+      {
+        "tracking_no": "00340434523209627200",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 0.9,
+        "explanation": "The latest status 'The shipment is in transit to DHL' indicates that the package is on its way to the carrier but has not yet been physically scanned or received by DHL itself. The previous event confirms only electronic data was received. Therefore, it is still in the pre-collection phase.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5155.7886600494385
+      },
+      {
+        "tracking_no": "00340434523209627217",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 0.9,
+        "explanation": "The latest status 'The shipment is in transit to DHL' indicates that the package is on its way to the carrier but has not yet been physically scanned or received by DHL itself. The previous event confirms only electronic data was received. Therefore, it is still in the pre-collection phase.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4799.886226654053
+      },
+      {
+        "tracking_no": "WS18010150872850657DL",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.99,
+        "explanation": "The latest event 'Arrive transithub' indicates the package is moving through the logistics network (specifically at a transit hub) after clearing customs. It has not yet reached the final delivery station or started the last-mile delivery process.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5419.740200042725
+      },
+      {
+        "tracking_no": "RELR08K2M45P",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking events explicitly state 'Delivered' and 'handed_to_neighbour', indicating the package has been successfully handed over.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4626.338243484497
+      },
+      {
+        "tracking_no": "CJ177408655DE",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest event indicates that the recipient was not present during the delivery attempt and has been notified. This signifies an unsuccessful delivery attempt, fitting the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4700.807571411133
+      },
+      {
+        "tracking_no": "GM5453527420279432",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event is 'ATTEMPTED DELIVERY', which indicates that a delivery attempt was made but the package was not successfully handed over to the recipient. This fits the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4895.668983459473
+      },
+      {
+        "tracking_no": "886615564972",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivered', indicating the package has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5870.9375858306885
+      },
+      {
+        "tracking_no": "VR823633144YP",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event explicitly states that the shipment could not be delivered due to unexpected circumstances and a new attempt will be made on the next business day. This indicates a failed delivery attempt.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4919.362783432007
+      },
+      {
+        "tracking_no": "1ZAF85060392879960",
+        "true_label": "ABNORMAL",
+        "predicted_label": "ABNORMAL",
+        "confidence": 0.95,
+        "explanation": "The latest status 'Voided Information Received' indicates that the shipment label or request has been cancelled/voided by the shipper before the package was even handed over to the carrier. This is a terminal abnormal state where the shipment process has been stopped.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4579.236030578613
+      },
+      {
+        "tracking_no": "00340434532298822878",
+        "true_label": "ABNORMAL",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "Although there were previous failed delivery attempts and a return-to-sender scan on 2025-09-10, the tracking shows subsequent successful processing and a final event on 2025-09-15 stating 'The shipment has been successfully delivered', indicating the issue was resolved and final delivery was achieved.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4745.957374572754
+      },
+      {
+        "tracking_no": "H06R4A0047513354",
+        "true_label": "DELIVERY_FAILED",
+        "predicted_label": "DELIVERY_FAILED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Delivery attempt unsuccessful' and mentions a retry on the next working day, which fits the definition of DELIVERY_FAILED.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5467.068195343018
+      },
+      {
+        "tracking_no": "BRTMA5121603308YQ",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.9,
+        "explanation": "The latest event 'Shipment operation completed' indicates that a processing step (like sorting or handling) has finished, but there is no evidence of final delivery, delivery attempt, or arrival at a final pickup point. Therefore, the package is still moving through the logistics network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4806.858062744141
+      },
+      {
+        "tracking_no": "YT2535100702518984",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4803.5173416137695
+      },
+      {
+        "tracking_no": "YT2535000703656744",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.95,
+        "explanation": "The latest tracking event is 'Awaiting collection at MORTDALE LPO'. This indicates the package has arrived at a local post office or collection point and is ready for the recipient to pick it up. This fits the definition of WAITING_DELIVERY (ready for pickup/out for delivery).",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4650.479793548584
+      },
+      {
+        "tracking_no": "VR815837928YP",
+        "true_label": "DELIVERED",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest tracking event explicitly states 'Package delivered', indicating the shipment has been successfully handed over to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4533.487319946289
+      },
+      {
+        "tracking_no": "GM5453527420279302",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.99,
+        "explanation": "The latest tracking event is 'OUT FOR DELIVERY', which clearly indicates that the package has entered the final delivery stage and is on its way to the recipient.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 5167.929410934448
+      },
+      {
+        "tracking_no": "SPXDFW030206760041",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Shipping Label Created' indicates that the carrier has received the shipment information and created a label, but the package has not yet been physically scanned or picked up by the carrier.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4540.494441986084
+      },
+      {
+        "tracking_no": "H068SC0001470426",
+        "true_label": "IN_TRANSIT",
+        "predicted_label": "IN_TRANSIT",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Your parcel has been exported' indicates the package has left the origin country or facility and is currently moving towards the destination. It has passed the initial processing and hub stages but has not yet arrived at the destination country or entered the final delivery phase.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4648.601055145264
+      },
+      {
+        "tracking_no": "WS17882706103523300DL",
+        "true_label": "INFO_RECEIVED",
+        "predicted_label": "INFO_RECEIVED",
+        "confidence": 1.0,
+        "explanation": "The latest and only event is 'Shipment information received', which indicates that the carrier has received the shipping request or label data, but the physical package has not yet been picked up or scanned into the network.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4919.4207191467285
+      },
+      {
+        "tracking_no": "1ZV725C96836246551",
+        "true_label": "ABNORMAL",
+        "predicted_label": "DELIVERED",
+        "confidence": 1.0,
+        "explanation": "The latest event in the tracking history is '[2025-12-19 15:59:54] DELIVERED', which clearly indicates the package has been successfully handed over to the recipient, resolving previous failed attempts and refusals.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4677.191972732544
+      },
+      {
+        "tracking_no": "9261290278833939422218",
+        "true_label": "WAITING_DELIVERY",
+        "predicted_label": "WAITING_DELIVERY",
+        "confidence": 0.95,
+        "explanation": "The latest event 'Held at Post Office, At Customer Request' indicates that the package is currently at the local facility and ready for the customer to pick up or awaiting further instructions, following an 'Out for Delivery' scan. This falls under the definition of waiting for final delivery/pickup.",
+        "model": "gemini-3",
+        "prompt_type": "time_based",
+        "latency_ms": 4850.332498550415
+      }
+    ]
+  },
+  "metrics": {
+    "gemini-3_time_based": {
+      "accuracy": 0.8,
+      "correct": 80,
+      "total": 100,
+      "per_category": {
+        "INFO_RECEIVED": {
+          "correct": 17,
+          "total": 17,
+          "accuracy": 1.0
+        },
+        "IN_TRANSIT": {
+          "correct": 10,
+          "total": 17,
+          "accuracy": 0.5882352941176471
+        },
+        "WAITING_DELIVERY": {
+          "correct": 13,
+          "total": 17,
+          "accuracy": 0.7647058823529411
+        },
+        "DELIVERED": {
+          "correct": 16,
+          "total": 17,
+          "accuracy": 0.9411764705882353
+        },
+        "DELIVERY_FAILED": {
+          "correct": 13,
+          "total": 16,
+          "accuracy": 0.8125
+        },
+        "ABNORMAL": {
+          "correct": 11,
+          "total": 16,
+          "accuracy": 0.6875
+        }
+      },
+      "confusion_matrix": {
+        "DELIVERED": {
+          "DELIVERED": 16,
+          "ABNORMAL": 1
+        },
+        "INFO_RECEIVED": {
+          "INFO_RECEIVED": 17
+        },
+        "ABNORMAL": {
+          "ABNORMAL": 11,
+          "DELIVERED": 4,
+          "IN_TRANSIT": 1
+        },
+        "WAITING_DELIVERY": {
+          "DELIVERY_FAILED": 3,
+          "WAITING_DELIVERY": 13,
+          "DELIVERED": 1
+        },
+        "DELIVERY_FAILED": {
+          "DELIVERY_FAILED": 13,
+          "ABNORMAL": 3
+        },
+        "IN_TRANSIT": {
+          "WAITING_DELIVERY": 4,
+          "IN_TRANSIT": 10,
+          "UNKNOWN": 1,
+          "INFO_RECEIVED": 2
+        }
+      },
+      "avg_latency_ms": 4961.759419441223
+    }
+  }
+}
