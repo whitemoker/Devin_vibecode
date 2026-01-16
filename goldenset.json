@@ -14643,297 +14643,6 @@
       ]
     },
     {
-      "tracking_no": "WS14532782726884605DL",
-      "local_provider_id": "1675793377199034369",
-      "events": [
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt"
-          ],
-          "transit_sub_status": "INFO_RECEIVED_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created"
-          ],
-          "transit_sub_status": "INFO_RECEIVED_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport"
-          ],
-          "transit_sub_status": "IN_TRANSIT_08"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport"
-          ],
-          "transit_sub_status": "IN_TRANSIT_08"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs"
-          ],
-          "transit_sub_status": "IN_TRANSIT_03"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub"
-          ],
-          "transit_sub_status": "IN_TRANSIT_03"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub",
-            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot"
-          ],
-          "transit_sub_status": "IN_TRANSIT_03"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub",
-            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
-            "[2025-12-04 09:02:36] Parcel processed at the hub"
-          ],
-          "transit_sub_status": "IN_TRANSIT_03"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub",
-            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
-            "[2025-12-04 09:02:36] Parcel processed at the hub",
-            "[2025-12-04 22:46:22] Collected by Evri"
-          ],
-          "transit_sub_status": "IN_TRANSIT_03"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub",
-            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
-            "[2025-12-04 09:02:36] Parcel processed at the hub",
-            "[2025-12-04 22:46:22] Collected by Evri",
-            "[2025-12-06 08:06:58] Parcel processed at the depot"
-          ],
-          "transit_sub_status": "IN_TRANSIT_03"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub",
-            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
-            "[2025-12-04 09:02:36] Parcel processed at the hub",
-            "[2025-12-04 22:46:22] Collected by Evri",
-            "[2025-12-06 08:06:58] Parcel processed at the depot",
-            "[2025-12-10 15:31:43] Out for delivery"
-          ],
-          "transit_sub_status": "WAITING_DELIVERY_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub",
-            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
-            "[2025-12-04 09:02:36] Parcel processed at the hub",
-            "[2025-12-04 22:46:22] Collected by Evri",
-            "[2025-12-06 08:06:58] Parcel processed at the depot",
-            "[2025-12-10 15:31:43] Out for delivery",
-            "[2025-12-10 18:18:12] ETA of delivery"
-          ],
-          "transit_sub_status": "WAITING_DELIVERY_01"
-        },
-        {
-          "details": [
-            "[2025-11-24 05:59:00] Carrier Receipt",
-            "[2025-11-24 13:02:17] Shipping Label Created",
-            "[2025-11-25 19:10:05] Picked up from shipper",
-            "[2025-11-25 20:10:05] Arrived at SHA Depot",
-            "[2025-11-25 20:30:05] Departed from Original Depot",
-            "[2025-11-25 20:40:05] Arrived at operation center",
-            "[2025-11-25 20:50:05] Departed from operation center",
-            "[2025-11-27 20:47:15] Arrived at original airport",
-            "[2025-12-01 06:05:34] Departed from original airport",
-            "[2025-12-03 00:49:34] Arrived at International airport",
-            "[2025-12-03 23:46:22] Released from customs",
-            "[2025-12-04 03:00:00] Arrive transithub",
-            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
-            "[2025-12-04 09:02:36] Parcel processed at the hub",
-            "[2025-12-04 22:46:22] Collected by Evri",
-            "[2025-12-06 08:06:58] Parcel processed at the depot",
-            "[2025-12-10 15:31:43] Out for delivery",
-            "[2025-12-10 18:18:12] ETA of delivery",
-            "[2025-12-10 23:40:31] This parcel has been Arrived at the customers letterbox"
-          ],
-          "transit_sub_status": "WAITING_DELIVERY_01"
-        }
-      ]
-    },
-    {
       "tracking_no": "887165763317",
       "local_provider_id": "165",
       "events": [
@@ -15010,228 +14719,6 @@
             "[2025-12-23 03:38:49] Departed FedEx location",
             "[2025-12-23 07:44:00] Arrived at FedEx location",
             "[2025-12-23 07:57:00] On FedEx vehicle for delivery"
-          ],
-          "transit_sub_status": "WAITING_DELIVERY_01"
-        }
-      ]
-    },
-    {
-      "tracking_no": "GM5453527420279432",
-      "local_provider_id": "107",
-      "events": [
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED"
-          ],
-          "transit_sub_status": "INFO_RECEIVED_01"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING"
-          ],
-          "transit_sub_status": "INFO_RECEIVED_01"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED"
-          ],
-          "transit_sub_status": "INFO_RECEIVED_01"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED"
-          ],
-          "transit_sub_status": "IN_TRANSIT_02"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG"
-          ],
-          "transit_sub_status": "IN_TRANSIT_02"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION"
-          ],
-          "transit_sub_status": "IN_TRANSIT_02"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN"
-          ],
-          "transit_sub_status": "IN_TRANSIT_02"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER"
-          ],
-          "transit_sub_status": "IN_TRANSIT_02"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS"
-          ],
-          "transit_sub_status": "IN_TRANSIT_07"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
-            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY"
-          ],
-          "transit_sub_status": "IN_TRANSIT_07"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
-            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
-            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY"
-          ],
-          "transit_sub_status": "IN_TRANSIT_07"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
-            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
-            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
-            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY"
-          ],
-          "transit_sub_status": "IN_TRANSIT_07"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
-            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
-            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
-            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
-            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
-            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
-            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
-            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
-            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER",
-            "[2025-12-15 14:59:00] ARRIVED AT CUSTOMS"
-          ],
-          "transit_sub_status": "IN_TRANSIT_01"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
-            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
-            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
-            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
-            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER",
-            "[2025-12-15 14:59:00] ARRIVED AT CUSTOMS",
-            "[2025-12-15 16:14:00] CLEARED CUSTOMS"
-          ],
-          "transit_sub_status": "IN_TRANSIT_07"
-        },
-        {
-          "details": [
-            "[2025-12-09 10:46:55] LABEL CREATED",
-            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
-            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
-            "[2025-12-10 08:31:30] PROCESSED",
-            "[2025-12-10 12:06:29] CLOSE BAG",
-            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
-            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
-            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
-            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
-            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
-            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
-            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
-            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER",
-            "[2025-12-15 14:59:00] ARRIVED AT CUSTOMS",
-            "[2025-12-15 16:14:00] CLEARED CUSTOMS",
-            "[2025-12-18 15:23:00] ATTEMPTED DELIVERY"
           ],
           "transit_sub_status": "WAITING_DELIVERY_01"
         }
@@ -40635,6 +40122,297 @@
           "transit_sub_status": "DELIVERED_01"
         }
       ]
+    },
+    {
+      "tracking_no": "WS14532782726884605DL",
+      "local_provider_id": "1675793377199034369",
+      "events": [
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt"
+          ],
+          "transit_sub_status": "INFO_RECEIVED_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created"
+          ],
+          "transit_sub_status": "INFO_RECEIVED_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport"
+          ],
+          "transit_sub_status": "IN_TRANSIT_08"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport"
+          ],
+          "transit_sub_status": "IN_TRANSIT_08"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs"
+          ],
+          "transit_sub_status": "IN_TRANSIT_03"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub"
+          ],
+          "transit_sub_status": "IN_TRANSIT_03"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub",
+            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot"
+          ],
+          "transit_sub_status": "IN_TRANSIT_03"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub",
+            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
+            "[2025-12-04 09:02:36] Parcel processed at the hub"
+          ],
+          "transit_sub_status": "IN_TRANSIT_03"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub",
+            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
+            "[2025-12-04 09:02:36] Parcel processed at the hub",
+            "[2025-12-04 22:46:22] Collected by Evri"
+          ],
+          "transit_sub_status": "IN_TRANSIT_03"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub",
+            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
+            "[2025-12-04 09:02:36] Parcel processed at the hub",
+            "[2025-12-04 22:46:22] Collected by Evri",
+            "[2025-12-06 08:06:58] Parcel processed at the depot"
+          ],
+          "transit_sub_status": "IN_TRANSIT_03"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub",
+            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
+            "[2025-12-04 09:02:36] Parcel processed at the hub",
+            "[2025-12-04 22:46:22] Collected by Evri",
+            "[2025-12-06 08:06:58] Parcel processed at the depot",
+            "[2025-12-10 15:31:43] Out for delivery"
+          ],
+          "transit_sub_status": "WAITING_DELIVERY_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub",
+            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
+            "[2025-12-04 09:02:36] Parcel processed at the hub",
+            "[2025-12-04 22:46:22] Collected by Evri",
+            "[2025-12-06 08:06:58] Parcel processed at the depot",
+            "[2025-12-10 15:31:43] Out for delivery",
+            "[2025-12-10 18:18:12] ETA of delivery"
+          ],
+          "transit_sub_status": "WAITING_DELIVERY_01"
+        },
+        {
+          "details": [
+            "[2025-11-24 05:59:00] Carrier Receipt",
+            "[2025-11-24 13:02:17] Shipping Label Created",
+            "[2025-11-25 19:10:05] Picked up from shipper",
+            "[2025-11-25 20:10:05] Arrived at SHA Depot",
+            "[2025-11-25 20:30:05] Departed from Original Depot",
+            "[2025-11-25 20:40:05] Arrived at operation center",
+            "[2025-11-25 20:50:05] Departed from operation center",
+            "[2025-11-27 20:47:15] Arrived at original airport",
+            "[2025-12-01 06:05:34] Departed from original airport",
+            "[2025-12-03 00:49:34] Arrived at International airport",
+            "[2025-12-03 23:46:22] Released from customs",
+            "[2025-12-04 03:00:00] Arrive transithub",
+            "[2025-12-04 09:01:36] We've received this parcel at the hub and will be sorted to the customers delivery depot",
+            "[2025-12-04 09:02:36] Parcel processed at the hub",
+            "[2025-12-04 22:46:22] Collected by Evri",
+            "[2025-12-06 08:06:58] Parcel processed at the depot",
+            "[2025-12-10 15:31:43] Out for delivery",
+            "[2025-12-10 18:18:12] ETA of delivery",
+            "[2025-12-10 23:40:31] This parcel has been Arrived at the customers letterbox"
+          ],
+          "transit_sub_status": "DELIVERED_01"
+        }
+      ]
     }
   ],
   "DELIVERY_FAILED": [
@@ -53156,6 +52934,228 @@
             "[2025-12-18 13:13:00] ATTEMPTED DELIVERY"
           ],
           "transit_sub_status": "DELIVERY_FAILED_04"
+        }
+      ]
+    },
+    {
+      "tracking_no": "GM5453527420279432",
+      "local_provider_id": "107",
+      "events": [
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED"
+          ],
+          "transit_sub_status": "INFO_RECEIVED_01"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING"
+          ],
+          "transit_sub_status": "INFO_RECEIVED_01"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED"
+          ],
+          "transit_sub_status": "INFO_RECEIVED_01"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED"
+          ],
+          "transit_sub_status": "IN_TRANSIT_02"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG"
+          ],
+          "transit_sub_status": "IN_TRANSIT_02"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION"
+          ],
+          "transit_sub_status": "IN_TRANSIT_02"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN"
+          ],
+          "transit_sub_status": "IN_TRANSIT_02"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER"
+          ],
+          "transit_sub_status": "IN_TRANSIT_02"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS"
+          ],
+          "transit_sub_status": "IN_TRANSIT_07"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
+            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY"
+          ],
+          "transit_sub_status": "IN_TRANSIT_07"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
+            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
+            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY"
+          ],
+          "transit_sub_status": "IN_TRANSIT_07"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
+            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
+            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
+            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY"
+          ],
+          "transit_sub_status": "IN_TRANSIT_07"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
+            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
+            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
+            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
+            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
+            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
+            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
+            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
+            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER",
+            "[2025-12-15 14:59:00] ARRIVED AT CUSTOMS"
+          ],
+          "transit_sub_status": "IN_TRANSIT_01"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
+            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
+            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
+            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
+            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER",
+            "[2025-12-15 14:59:00] ARRIVED AT CUSTOMS",
+            "[2025-12-15 16:14:00] CLEARED CUSTOMS"
+          ],
+          "transit_sub_status": "IN_TRANSIT_07"
+        },
+        {
+          "details": [
+            "[2025-12-09 10:46:55] LABEL CREATED",
+            "[2025-12-09 16:22:30] EN ROUTE TO DHL ECOMMERCE OR AWAITING PROCESSING",
+            "[2025-12-10 00:00:00] ELECTRONIC SHIPPING INFO RECEIVED",
+            "[2025-12-10 08:31:30] PROCESSED",
+            "[2025-12-10 12:06:29] CLOSE BAG",
+            "[2025-12-10 13:17:28] MANIFESTED FOR OUTBOUND TRANSPORTATION",
+            "[2025-12-10 13:17:34] PROCESSING COMPLETED AT ORIGIN",
+            "[2025-12-10 13:17:37] SCANNED INTO SACK/CONTAINER",
+            "[2025-12-11 10:22:00] SHIPMENT ACCEPTED BY USPS",
+            "[2025-12-11 11:37:00] PROCESSED THROUGH SORT FACILITY",
+            "[2025-12-11 11:38:00] ARRIVED AT EXPORT FACILITY",
+            "[2025-12-11 11:58:00] PROCESSED AT EXPORT FACILITY",
+            "[2025-12-15 14:59:00] PROCESSED AT LOCAL DISTRIBUTION CENTER",
+            "[2025-12-15 14:59:00] ARRIVED AT CUSTOMS",
+            "[2025-12-15 16:14:00] CLEARED CUSTOMS",
+            "[2025-12-18 15:23:00] ATTEMPTED DELIVERY"
+          ],
+          "transit_sub_status": "DELIVERY_FAILED_01"
         }
       ]
     }
