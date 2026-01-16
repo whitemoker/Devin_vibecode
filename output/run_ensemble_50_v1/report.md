@@ -1,54 +1,61 @@
-# Primary Classification Test Report
+# Primary Classification Test Report (50 Samples × 4 Models × 3 Prompts)
 
-Generated: 2026-01-10 09:11:23
+> **IMPORTANT**: This report has been updated with corrected labels (2026-01-16)
+> For the latest accuracy summary, see: `output/ACCURACY_SUMMARY.md`
 
-## Overall Results
+## Updated Results (After Label Correction)
 
-| Model | Prompt | Accuracy | Correct/Total | Avg Latency |
-|-------|--------|----------|---------------|-------------|
-| gpt-5.2 | time_based | 52.00% | 26/50 | 2072ms |
-| gpt-5.2 | evidence_based | 50.00% | 25/50 | 3066ms |
-| gpt-5.2 | rule_based | 48.00% | 24/50 | 2276ms |
-| grok-4 | time_based | 48.00% | 24/50 | 9870ms |
-| grok-4 | evidence_based | 48.00% | 24/50 | 15386ms |
-| claude-opus-4.5 | time_based | 46.00% | 23/50 | 2615ms |
-| claude-opus-4.5 | evidence_based | 46.00% | 23/50 | 2784ms |
-| gemini-3 | rule_based | 46.00% | 23/50 | 4400ms |
-| grok-4 | rule_based | 46.00% | 23/50 | 13020ms |
-| claude-opus-4.5 | rule_based | 44.00% | 22/50 | 2732ms |
-| gemini-3 | time_based | 44.00% | 22/50 | 5724ms |
-| gemini-3 | evidence_based | 40.00% | 20/50 | 5505ms |
+| 指标 | 结果 |
+|------|------|
+| 总体准确率 | **90.4%** (491/543有效预测) |
+| 简单多数投票 | **94.0%** (47/50) |
+| 专家加权投票 | **94.0%** (47/50) |
 
-## Best Combinations
+### 模型准确率
 
-**Best Overall**: gpt-5.2 + time_based (52.00%)
+| Model | Accuracy | Correct/Total |
+|-------|----------|---------------|
+| GPT-5.2 | **94.7%** | 142/150 |
+| Gemini-3 | **93.6%** | 88/94 |
+| Grok-4 | **89.3%** | 133/149 |
+| Claude-Opus-4.5 | **85.3%** | 128/150 |
 
-**Best per Model**:
-- gpt-5.2: time_based (52.00%)
-- grok-4: time_based (48.00%)
-- claude-opus-4.5: time_based (46.00%)
-- gemini-3: rule_based (46.00%)
+### Prompt准确率
 
-## Per-Category Accuracy (Best Model)
+| Prompt | Accuracy | Correct/Total |
+|--------|----------|---------------|
+| time_based | **92.0%** | 161/175 |
+| evidence_based | **91.3%** | 157/172 |
+| rule_based | **88.3%** | 173/196 |
+
+### 按类别准确率
 
 | Category | Accuracy | Correct/Total |
 |----------|----------|---------------|
-| INFO_RECEIVED | 55.56% | 5/9 |
-| IN_TRANSIT | 77.78% | 7/9 |
-| WAITING_DELIVERY | 37.50% | 3/8 |
-| DELIVERED | 62.50% | 5/8 |
-| DELIVERY_FAILED | 25.00% | 2/8 |
-| ABNORMAL | 50.00% | 4/8 |
+| WAITING_DELIVERY | **100.0%** | 62/62 |
+| INFO_RECEIVED | **99.0%** | 98/99 |
+| DELIVERY_FAILED | **92.6%** | 88/95 |
+| DELIVERED | **92.1%** | 93/101 |
+| ABNORMAL | **80.7%** | 67/83 |
+| IN_TRANSIT | **80.6%** | 83/103 |
 
-## Confusion Matrix (Best Model)
+### Top 5 专家组合
 
-Rows = True Label, Columns = Predicted Label
+| Expert (Model_Prompt) | Accuracy |
+|-----------------------|----------|
+| gemini-3_time_based | **100.0%** |
+| gpt-5.2_time_based | **98.0%** |
+| gpt-5.2_evidence_based | **94.0%** |
+| grok-4_evidence_based | **93.9%** |
+| gpt-5.2_rule_based | **92.0%** |
 
-| True \ Pred | INFO_RECEIVED | IN_TRANSIT | WAITING_DELIVERY | DELIVERED | DELIVERY_FAILED | ABNORMAL |
-|---|---|---|---|---|---|---|
-| INFO_RECEIVED | 5 | 0 | 0 | 0 | 0 | 0 |
-| IN_TRANSIT | 0 | 7 | 0 | 0 | 0 | 0 |
-| WAITING_DELIVERY | 0 | 0 | 3 | 1 | 1 | 0 |
-| DELIVERED | 0 | 0 | 0 | 5 | 0 | 0 |
-| DELIVERY_FAILED | 0 | 0 | 0 | 0 | 2 | 0 |
-| ABNORMAL | 0 | 0 | 0 | 0 | 0 | 4 |
+## Label Corrections Applied
+
+| tracking_no | Old Label | Corrected Label |
+|-------------|-----------|-----------------|
+| GM5453527420279432 | WAITING_DELIVERY | DELIVERY_FAILED |
+| WS14532782726884605DL | WAITING_DELIVERY | DELIVERED |
+
+---
+*Original report generated: 2026-01-10 09:11:23*
+*Updated with corrected labels: 2026-01-16*

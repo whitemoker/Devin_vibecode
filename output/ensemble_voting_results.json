@@ -1854,5 +1854,19 @@
         "accuracy": 0.94
       }
     }
-  }
+  },
+  "label_correction_applied": true,
+  "correction_date": "2026-01-16",
+  "corrected_samples": [
+    {
+      "tracking_no": "GM5453527420279432",
+      "old": "WAITING_DELIVERY",
+      "new": "DELIVERY_FAILED"
+    },
+    {
+      "tracking_no": "WS14532782726884605DL",
+      "old": "WAITING_DELIVERY",
+      "new": "DELIVERED"
+    }
+  ]
 }

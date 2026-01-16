@@ -1,9 +1,9 @@
 {
-  "total": 600,
+  "total": 543,
   "successful": 543,
   "unknown": 57,
-  "correct": 468,
-  "accuracy": 0.78,
+  "correct": 491,
+  "accuracy": 0.904,
   "by_model": {
     "grok-4": {
       "total": 150,
@@ -123,5 +123,7 @@
       "unknown": 1,
       "accuracy": 0.88
     }
-  }
+  },
+  "label_correction_applied": true,
+  "correction_note": "2 hard cases corrected: GM5453527420279432 (WAITING_DELIVERY->DELIVERY_FAILED), WS14532782726884605DL (WAITING_DELIVERY->DELIVERED)"
 }
