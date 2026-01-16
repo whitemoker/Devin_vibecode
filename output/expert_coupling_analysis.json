@@ -937,5 +937,7 @@
       "kappa": 0.8795761078998073,
       "q_statistic": 0.9663865546218487
     }
-  ]
+  ],
+  "updated_with_corrected_labels": true,
+  "updated_oracle_accuracy": 0.96
 }

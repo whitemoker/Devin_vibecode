@@ -1704,7 +1704,7 @@
     },
     {
       "tracking_no": "GM5453527420279432",
-      "true_label": "WAITING_DELIVERY",
+      "true_label": "DELIVERY_FAILED",
       "events": [
         {
           "details": [
@@ -3165,7 +3165,7 @@
     },
     {
       "tracking_no": "WS14532782726884605DL",
-      "true_label": "WAITING_DELIVERY",
+      "true_label": "DELIVERED",
       "events": [
         {
           "details": [

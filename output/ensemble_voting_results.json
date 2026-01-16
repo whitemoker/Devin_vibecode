@@ -1804,5 +1804,55 @@
         "is_correct": true
       }
     ]
+  },
+  "updated_summary": {
+    "updated_with_corrected_labels": true,
+    "correction_date": "2026-01-16",
+    "corrections": [
+      {
+        "tracking_no": "GM5453527420279432",
+        "old": "WAITING_DELIVERY",
+        "new": "DELIVERY_FAILED"
+      },
+      {
+        "tracking_no": "WS14532782726884605DL",
+        "old": "WAITING_DELIVERY",
+        "new": "DELIVERED"
+      }
+    ],
+    "overall_accuracy": {
+      "valid_predictions": 543,
+      "correct": 491,
+      "accuracy": 0.904
+    },
+    "by_model": {
+      "gpt-5.2": {
+        "correct": 142,
+        "total": 150,
+        "accuracy": 0.947
+      },
+      "gemini-3": {
+        "correct": 88,
+        "total": 94,
+        "accuracy": 0.936
+      },
+      "grok-4": {
+        "correct": 133,
+        "total": 149,
+        "accuracy": 0.893
+      },
+      "claude-opus-4.5": {
+        "correct": 128,
+        "total": 150,
+        "accuracy": 0.853
+      }
+    },
+    "voting_accuracy": {
+      "simple_majority": {
+        "correct": 47,
+        "total": 50,
+        "accuracy": 0.94
+      }
+    }
   }
 }
